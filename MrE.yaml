@@ -175,7 +175,7 @@ Children:
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
           name: Safety Enabled, validators: null, value: true}
       Base: Differential Drive
-      Name: differntialDrive1
+      Name: differentialDrive1
     - Children: []
       Properties:
         UpdateRate: !!robotbuilder.data.properties.IntegerProperty {default: 50, name: UpdateRate,
