@@ -39,7 +39,7 @@ public class Robot extends TimedRobot {
 
     private RobotContainer m_robotContainer;
 
-    private String trajectoryBL1P1 = "paths/BL1P1.wpilib.json";
+    private String trajectoryBL1P1 = "paths/output/BL1P1.wpilib.json";
 
 
     /**
