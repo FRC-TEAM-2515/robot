@@ -14,6 +14,7 @@ package frc.robot;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
+import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.math.trajectory.TrajectoryUtil;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -39,8 +41,10 @@ public class Robot extends TimedRobot {
 
     private RobotContainer m_robotContainer;
 
-    private String trajectoryBL1P1 = "paths/output/BL1P1.wpilib.json";
+    public static Alliance m_alliance = DriverStation.getAlliance();
 
+    public static String trajectoryBL1P1 = "paths/output/BL1P1.wpilib.json";
+    public static String trajectoryRL1P1 = "paths/output/RL1P1.wpilib.json";
 
     /**
      * This function is run when the robot is first started up and should be
@@ -56,7 +60,13 @@ public class Robot extends TimedRobot {
         m_robotContainer.m_driveSubsystem.resetGyro();
         try {
             Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryBL1P1);
-            m_robotContainer.m_trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+            m_robotContainer.m_trajectoryBL1P1 = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+         } catch (IOException ex) {
+            DriverStation.reportError("Unable to open trajectory: " + trajectoryBL1P1, ex.getStackTrace());
+         }
+         try {
+            Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryRL1P1);
+            m_robotContainer.m_trajectoryRL1P1 = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
          } catch (IOException ex) {
             DriverStation.reportError("Unable to open trajectory: " + trajectoryBL1P1, ex.getStackTrace());
          }
