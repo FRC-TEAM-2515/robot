@@ -41,8 +41,6 @@ public class Robot extends TimedRobot {
 
     private RobotContainer m_robotContainer;
 
-    public static Alliance m_alliance = DriverStation.getAlliance();
-
     public static String trajectoryBL1P1 = "paths/output/BL1P1.wpilib.json";
     public static String trajectoryRL1P1 = "paths/output/RL1P1.wpilib.json";
 
