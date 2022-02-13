@@ -124,9 +124,13 @@ public class DriveSubsystem extends SubsystemBase {
         m_odometry = new DifferentialDriveOdometry(m_gyro.getRotation2d());
     }
 
-    private void resetEncoders() {
+    public void resetEncoders() {
         m_encoderLeftDrive.setPosition(0);
         m_encoderRightDrive.setPosition(0);
+    }
+
+    public void resetGyro() {
+        m_gyro.reset();
     }
 
     public void zeroHeading() {
@@ -176,6 +180,8 @@ public class DriveSubsystem extends SubsystemBase {
         SmartDashboard.putBoolean("NaxX Connected", m_gyro.isConnected());
         SmartDashboard.putNumber("Avg Velocity", getAverageEncoderVelocity());
         SmartDashboard.putNumber("Avg Distance", getAverageEncoderDistance());
+        SmartDashboard.putBoolean("Curvature Drive", curvatureDriveMode);
+        SmartDashboard.putBoolean("Right Stick Steer", rightStickMode);
         m_odometry.update(
                 m_gyro.getRotation2d(), m_encoderLeftDrive.getPosition(), m_encoderRightDrive.getPosition());
     }
@@ -202,34 +208,34 @@ public class DriveSubsystem extends SubsystemBase {
         differentialDrive.feed();
     }
 
-    public void pilotDrive(){
-        if(pilotController == null){
-			pilotController = RobotContainer.getInstance().getcontrollerPilot();
-		}
-        if(curvatureDriveMode) {
+    public void pilotDrive() {
+        if (pilotController == null) {
+            pilotController = RobotContainer.getInstance().getcontrollerPilot();
+        }
+        if (curvatureDriveMode) {
             if (rightStickMode) {
                 differentialDrive.curvatureDrive(
-                    -accelerationLimiter.calculate(
-                        pilotController.getLeftY()), 
+                        -accelerationLimiter.calculate(
+                                pilotController.getLeftY()),
                         pilotController.getRightX() * DriveConstants.kSteeringOutputModifier,
                         pilotController.getRawButton(10));
             } else {
                 differentialDrive.curvatureDrive(
-                    -accelerationLimiter.calculate(
-                        pilotController.getLeftY()), 
+                        -accelerationLimiter.calculate(
+                                pilotController.getLeftY()),
                         pilotController.getLeftX() * DriveConstants.kSteeringOutputModifier,
                         pilotController.getRawButton(10));
             }
         } else {
             if (rightStickMode) {
                 differentialDrive.arcadeDrive(
-                    -accelerationLimiter.calculate(
-                        pilotController.getLeftY()), 
+                        -accelerationLimiter.calculate(
+                                pilotController.getLeftY()),
                         pilotController.getRightX() * DriveConstants.kSteeringOutputModifier);
             } else {
                 differentialDrive.arcadeDrive(
-                    -accelerationLimiter.calculate(
-                        pilotController.getLeftY()), 
+                        -accelerationLimiter.calculate(
+                                pilotController.getLeftY()),
                         pilotController.getLeftX() * DriveConstants.kSteeringOutputModifier);
             }
         }
