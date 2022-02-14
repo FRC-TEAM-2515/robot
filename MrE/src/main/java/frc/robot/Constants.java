@@ -28,6 +28,11 @@ import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 public class Constants {
     public static final class DriveConstants {
 
+        public static final int kDriveRightLeaderID = 11;
+        public static final int kDriveRigthFollowerID = 12;
+        public static final int kDriveLeftLeaderID = 13;
+        public static final int kDriveLeftFollowerID = 14;
+
         public static final double kDeadband = 0.07;
         public static final double kAcellerationLimit = 0.8; // Slew rate limiter
         public static final double kSteeringOutputModifier = 0.5;
@@ -64,5 +69,10 @@ public class Constants {
     }
     public static final class ShooterConstants {
         public static final double kVelocityConversionFactor = 1.0;
+        public static int kShooterLeaderID = 15;
+        public static final double kP = 1.0;
+        public static final double kI = 0.0;
+        public static final double kD = 0.0;
+        public static final double kF = 0.0;
     }
 }
