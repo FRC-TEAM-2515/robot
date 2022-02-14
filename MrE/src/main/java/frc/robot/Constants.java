@@ -62,5 +62,16 @@ public class Constants {
         public static final double kRamseteB = 2;
         public static final double kRamseteZeta = 0.7;
     }
+    public static final class ShooterConstants {
+        public static double kP = 6e-5; 
+        public static double kI = 0;
+        public static double kD = 0; 
+        public static double kIz = 0; 
+        public static double kFF = 0.000015; 
+        public static double kMaxOutput = 1; 
+        public static double kMinOutput = -1;
+        public static final double kMaxRPM = 5700;
+        public static double kVelocityConversionFactor = 1.0;
+    }
 
 }
