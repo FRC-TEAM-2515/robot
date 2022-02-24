@@ -68,8 +68,8 @@ public class AutonomousCommand extends CommandBase {
                         DriveConstants.ksVolts,
                         DriveConstants.kvVoltSecondsPerMeter,
                         DriveConstants.kaVoltSecondsSquaredPerMeter),
-                DriveConstants.kDriveKinematics,
-                10);
+                        DriveConstants.kDriveKinematics,
+                        10);
         TrajectoryConfig config = new TrajectoryConfig(
                 DriveConstants.kMaxSpeedMetersPerSecond,
                 DriveConstants.kMaxAccelerationMetersPerSecondSquared)
@@ -92,9 +92,9 @@ public class AutonomousCommand extends CommandBase {
                 // RamseteCommand passes volts to the callback
                 m_robotContainer.m_driveSubsystem::tankDriveVolts,
                 m_robotContainer.m_driveSubsystem);
-                m_robotContainer.m_driveSubsystem.resetOdometry(m_trajectory.getInitialPose());
-                
-                ramseteCommand.andThen(() -> m_robotContainer.m_driveSubsystem.tankDriveVolts(0, 0));
+        m_robotContainer.m_driveSubsystem.resetOdometry(m_trajectory.getInitialPose());
+
+        ramseteCommand.andThen(() -> m_robotContainer.m_driveSubsystem.tankDriveVolts(0, 0));
     }
 
     // Called every time the scheduler runs while the command is scheduled.

@@ -40,16 +40,20 @@ public class Constants {
         public static final double kWheelDiameterInches = 6.0;
         public static final double kDriveGearRatio = 10.71;
         public static final double kEncoderTicksPerRevolution = 168; // 96 tested, actual from documentation is 42;
-        public static final double kEncoderTick2Feet = 1.0 / kEncoderTicksPerRevolution * kDriveGearRatio * kWheelDiameterInches * Math.PI / 12;
-        public static final double kEncoderTick2Meter = 1.0 / kEncoderTicksPerRevolution * kDriveGearRatio * kWheelDiameterMeter * Math.PI;
+        public static final double kEncoderTick2Feet = 1.0 / kEncoderTicksPerRevolution * kDriveGearRatio
+                * kWheelDiameterInches * Math.PI / 12;
+        public static final double kEncoderTick2Meter = 1.0 / kEncoderTicksPerRevolution * kDriveGearRatio
+                * kWheelDiameterMeter * Math.PI;
 
         public static final double kEncoderPositionConversionFactor = kEncoderTick2Meter;
-        public static final double kEncoderVelocityConversionFactor = kDriveGearRatio * Math.PI * kWheelDiameterMeter / 60;
+        public static final double kEncoderVelocityConversionFactor = kDriveGearRatio * Math.PI * kWheelDiameterMeter
+                / 60;
 
         public static final double kAutoDriveForwardSpeed = 0.5;
         public static final double kAutoDriveForwardDistance = 5;
 
-        // The Robot Characterization Toolsuite provides a convenient tool for obtaining these
+        // The Robot Characterization Toolsuite provides a convenient tool for obtaining
+        // these
         // values for your robot.
         public static final double ksVolts = 0.11653;
         public static final double kvVoltSecondsPerMeter = 0.12895;
@@ -58,15 +62,16 @@ public class Constants {
         public static final double kPDriveVel = 0.5;
 
         public static final double kTrackwidthMeters = 0.5588;
-        public static final DifferentialDriveKinematics kDriveKinematics =
-            new DifferentialDriveKinematics(kTrackwidthMeters);
+        public static final DifferentialDriveKinematics kDriveKinematics = new DifferentialDriveKinematics(
+                kTrackwidthMeters);
 
         public static final double kMaxSpeedMetersPerSecond = 3;
-        public static final double kMaxAccelerationMetersPerSecondSquared = 1.5; 
+        public static final double kMaxAccelerationMetersPerSecondSquared = 1.5;
 
         public static final double kRamseteB = 2;
         public static final double kRamseteZeta = 0.7;
     }
+
     public static final class ShooterConstants {
         public static final double kVelocityConversionFactor = 1.0;
         public static int kShooterLeaderID = 15;
