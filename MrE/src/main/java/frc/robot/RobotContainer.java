@@ -82,10 +82,6 @@ public class RobotContainer {
                                 new cmdShooterSetRPM(200, m_shooterSubsystem));
                 SmartDashboard.putData("cmdShooterSetRPM: setpointMaxRPM",
                                 new cmdShooterSetRPM(500, m_shooterSubsystem));
-                SmartDashboard.putData("cmdIntakeDeploy: setpointStowed",
-                                new cmdIntakeDeploy(0, m_intakeDeploySubsystem));
-                SmartDashboard.putData("cmdIntakeDeploy: setpointDeployed",
-                                new cmdIntakeDeploy(500, m_intakeDeploySubsystem));
                 SmartDashboard.putData("cmdIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
                 SmartDashboard.putData("cmdSafeReset", new cmdSafeReset());
                 SmartDashboard.putData("cmdHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
