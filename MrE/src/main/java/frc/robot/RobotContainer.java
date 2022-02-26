@@ -191,19 +191,19 @@ public class RobotContainer {
                 btnIntakeToggle.whenPressed(new cmdIntakeToggle(m_intakeSubsystem), true);
                 SmartDashboard.putData("btnIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
 
-                final JoystickButton btnShooterSetRPMMin = new JoystickButton(controllerPilot,
-                                XboxController.Button.kA.value);
-                btnShooterSetRPMMin.whenPressed(new cmdShooterSetRPM(500, m_shooterSubsystem), true);
-                SmartDashboard.putData("btnShooterSetRPMMin", new cmdShooterSetRPM(50, m_shooterSubsystem));
+                // final JoystickButton btnShooterSetRPMMin = new JoystickButton(controllerPilot,
+                //                 XboxController.Button.kA.value);
+                // btnShooterSetRPMMin.whenPressed(new cmdShooterSetRPM(500, m_shooterSubsystem), true);
+                // SmartDashboard.putData("btnShooterSetRPMMin", new cmdShooterSetRPM(50, m_shooterSubsystem));
 
-                final JoystickButton btnShooterSetRPMMax = new JoystickButton(controllerPilot,
-                                XboxController.Button.kY.value);
-                btnShooterSetRPMMax.whenPressed(new cmdShooterSetRPM(1000, m_shooterSubsystem), true);
-                SmartDashboard.putData("btnShooterSetRPMMax", new cmdShooterSetRPM(200, m_shooterSubsystem));
+                // final JoystickButton btnShooterSetRPMMax = new JoystickButton(controllerPilot,
+                //                 XboxController.Button.kY.value);
+                // btnShooterSetRPMMax.whenPressed(new cmdShooterSetRPM(1000, m_shooterSubsystem), true);
+                // SmartDashboard.putData("btnShooterSetRPMMax", new cmdShooterSetRPM(200, m_shooterSubsystem));
 
                 final JoystickButton btnShooterToggle = new JoystickButton(controllerPilot,
                                 XboxController.Button.kB.value);
-                btnShooterSetRPMMax.whenPressed(new cmdShooterToggle(m_shooterSubsystem), true);
+                btnShooterToggle.whenPressed(new cmdShooterToggle(m_shooterSubsystem), true);
                 SmartDashboard.putData("btnShooterSetRPMMax", new cmdShooterSetRPM(200, m_shooterSubsystem));
 
                 final JoystickButton btnDriveToggleRightStickMode = new JoystickButton(controllerPilot,
