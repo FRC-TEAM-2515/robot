@@ -52,6 +52,8 @@ public class Constants {
 
         public static final double kAutoDriveForwardSpeed = 0.5;
         public static final double kAutoDriveForwardDistance = 5;
+        public static final double kAutoDriveDistance = -1; //Meters
+
 
         // The Robot Characterization Toolsuite provides a convenient tool for obtaining
         // these

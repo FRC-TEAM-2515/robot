@@ -261,4 +261,9 @@ public class DriveSubsystem extends SubsystemBase {
             rightStickMode = false;
         }
     }
+
+    public void tankDriveSpeed(double leftSpeed, double rightSpeed) {
+        m_driveLeft.set(leftSpeed);
+        m_driveRight.set(rightSpeed);
+    }
 }
