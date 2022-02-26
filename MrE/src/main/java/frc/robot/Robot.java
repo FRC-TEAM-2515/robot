@@ -43,6 +43,7 @@ public class Robot extends TimedRobot {
 
     public static String trajectoryBL1P1 = "paths/output/BL1P1.wpilib.json";
     public static String trajectoryRL1P1 = "paths/output/RL1P1.wpilib.json";
+    public static String trajectoryDefault = "paths/output/Default.wpilib.json";
 
     /**
      * This function is run when the robot is first started up and should be
@@ -57,6 +58,7 @@ public class Robot extends TimedRobot {
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
         m_robotContainer.m_driveSubsystem.resetEncoders();
         m_robotContainer.m_driveSubsystem.resetGyro();
+        m_robotContainer.m_intakeDeploySubsystem.resetEncoder();
         try {
             Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryBL1P1);
             m_robotContainer.m_trajectoryBL1P1 = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -66,6 +68,12 @@ public class Robot extends TimedRobot {
         try {
             Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryRL1P1);
             m_robotContainer.m_trajectoryRL1P1 = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+        } catch (IOException ex) {
+            DriverStation.reportError("Unable to open trajectory: " + trajectoryBL1P1, ex.getStackTrace());
+        }
+        try {
+            Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryDefault);
+            m_robotContainer.m_trajectoryDefault = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
         } catch (IOException ex) {
             DriverStation.reportError("Unable to open trajectory: " + trajectoryBL1P1, ex.getStackTrace());
         }

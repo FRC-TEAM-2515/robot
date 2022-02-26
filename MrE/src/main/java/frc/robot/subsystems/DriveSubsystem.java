@@ -101,7 +101,7 @@ public class DriveSubsystem extends SubsystemBase {
         m_driveLeft = new MotorControllerGroup(m_driveLeftLeader, m_driveLeftFollower);
         addChild("m_driveLeft", m_driveLeft);
 
-        differentialDrive = new DifferentialDrive(m_driveRight, m_driveRightLeader);
+        differentialDrive = new DifferentialDrive(m_driveLeft, m_driveRight);
         addChild("DifferentialDrive", differentialDrive);
         differentialDrive.setSafetyEnabled(true);
         differentialDrive.setExpiration(0.1);
@@ -113,7 +113,7 @@ public class DriveSubsystem extends SubsystemBase {
         m_encoderRightDrive = m_driveRightLeader.getEncoder();
         m_encoderRightDrive.setPositionConversionFactor(DriveConstants.kEncoderPositionConversionFactor);
         m_encoderRightDrive.setVelocityConversionFactor(DriveConstants.kEncoderVelocityConversionFactor);
-        m_encoderRightDrive.setInverted(true);
+        // m_encoderRightDrive.setInverted(true);
 
         m_encoderLeftDrive = m_driveLeftLeader.getEncoder();
         m_encoderLeftDrive.setPositionConversionFactor(DriveConstants.kEncoderPositionConversionFactor);
