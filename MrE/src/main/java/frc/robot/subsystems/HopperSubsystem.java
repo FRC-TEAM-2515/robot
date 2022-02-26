@@ -67,4 +67,8 @@ public class HopperSubsystem extends SubsystemBase {
         m_hopperStage1Leader.set(output);
     }
 
+    public void stopMotors(){
+        m_hopperStage1Leader.set(0.0);
+    }
+
 }
