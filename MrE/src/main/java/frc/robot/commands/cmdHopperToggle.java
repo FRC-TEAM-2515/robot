@@ -48,6 +48,7 @@ public class cmdHopperToggle extends InstantCommand {
     // Called once when this command runs
     @Override
     public void initialize() {
+        m_hopperSubsystem.setOutput(0.5);
     }
 
     @Override

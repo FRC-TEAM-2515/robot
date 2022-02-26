@@ -180,13 +180,13 @@ public class RobotContainer {
 
                 final JoystickButton btnShooterSetRPMMin = new JoystickButton(controllerPilot,
                                 XboxController.Button.kA.value);
-                btnShooterSetRPMMin.whenPressed(new cmdShooterSetRPM(200, m_shooterSubsystem), true);
-                SmartDashboard.putData("btnShooterSetRPMMin", new cmdShooterSetRPM(200, m_shooterSubsystem));
+                btnShooterSetRPMMin.whenPressed(new cmdShooterSetRPM(50, m_shooterSubsystem), true);
+                SmartDashboard.putData("btnShooterSetRPMMin", new cmdShooterSetRPM(50, m_shooterSubsystem));
 
                 final JoystickButton btnShooterSetRPMMax = new JoystickButton(controllerPilot,
                                 XboxController.Button.kY.value);
-                btnShooterSetRPMMax.whenPressed(new cmdShooterSetRPM(500, m_shooterSubsystem), true);
-                SmartDashboard.putData("btnShooterSetRPMMax", new cmdShooterSetRPM(500, m_shooterSubsystem));
+                btnShooterSetRPMMax.whenPressed(new cmdShooterSetRPM(200, m_shooterSubsystem), true);
+                SmartDashboard.putData("btnShooterSetRPMMax", new cmdShooterSetRPM(200, m_shooterSubsystem));
 
                 final JoystickButton btnDriveToggleRightStickMode = new JoystickButton(controllerPilot,
                                 XboxController.Button.kStart.value);

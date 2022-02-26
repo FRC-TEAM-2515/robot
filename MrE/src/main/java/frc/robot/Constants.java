@@ -74,8 +74,8 @@ public class Constants {
 
     public static final class ShooterConstants {
         public static final double kVelocityConversionFactor = 1.0;
-        public static int kShooterLeaderID = 18;
-        public static int kShooterFollowerID = 19;
+        public static int kShooterLeaderID = 19;
+        public static int kShooterFollowerID = 18;
         public static final double kP = 1.0;
         public static final double kI = 0.0;
         public static final double kD = 0.0;
