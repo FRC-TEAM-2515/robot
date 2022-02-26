@@ -85,8 +85,8 @@ public class ClimbStage1Subsystem extends SubsystemBase {
     }
 
     public void setBrake() {
-        m_climbMotorLeader.set(0.1);
-        m_climbMotorFollower.set(0.1);
+        m_climbMotorLeader.set(0.3);
+        m_climbMotorFollower.set(0.3);
     }
 
     public void stopMotors(){

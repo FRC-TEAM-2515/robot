@@ -35,7 +35,8 @@ public class Constants {
 
         public static final double kDeadband = 0.07;
         public static final double kAcellerationLimit = 0.8; // Slew rate limiter
-        public static final double kSteeringOutputModifier = 0.3;
+        public static final double kSteeringOutputModifier = 0.4;
+
         public static final double kWheelDiameterMeter = 0.1524;
         public static final double kWheelDiameterInches = 6.0;
         public static final double kDriveGearRatio = 10.71;
