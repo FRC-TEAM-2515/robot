@@ -53,7 +53,7 @@ public class cmdIntakeToggle extends InstantCommand {
             m_intakeSubsystem.setOutput(0.0);
             isRunning = false;
         } else {
-            m_intakeSubsystem.setOutput(0.5);
+            m_intakeSubsystem.setOutput(0.75);
             isRunning = true;
         }
     }

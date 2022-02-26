@@ -20,11 +20,15 @@ import edu.wpi.first.math.trajectory.TrajectoryUtil;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.hal.HAL;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -45,6 +49,7 @@ public class Robot extends TimedRobot {
     public static String trajectoryRL1P1 = "paths/output/RL1P1.wpilib.json";
     public static String trajectoryDefault = "paths/output/Default.wpilib.json";
 
+    public AnalogPotentiometer rangeFinder;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -59,6 +64,9 @@ public class Robot extends TimedRobot {
         m_robotContainer.m_driveSubsystem.resetEncoders();
         m_robotContainer.m_driveSubsystem.resetGyro();
         m_robotContainer.m_intakeDeploySubsystem.resetEncoder();
+        CameraServer.startAutomaticCapture();
+        rangeFinder = new AnalogPotentiometer(0, 180, 30);
+
         try {
             Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryBL1P1);
             m_robotContainer.m_trajectoryBL1P1 = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -99,6 +107,7 @@ public class Robot extends TimedRobot {
         // robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run();
+        SmartDashboard.putNumber("Range", rangeFinder.get());
     }
 
     /**
@@ -106,6 +115,10 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit() {
+        m_robotContainer.m_climbStage1Subsystem.stopMotors();
+        m_robotContainer.m_hopperSubsystem.stopMotors();
+        m_robotContainer.m_intakeSubsystem.stopMotor();
+        m_robotContainer.m_shooterSubsystem.stopMotors();
     }
 
     @Override

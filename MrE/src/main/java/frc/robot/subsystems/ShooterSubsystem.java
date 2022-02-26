@@ -60,7 +60,7 @@ public class ShooterSubsystem extends PIDSubsystem {
         m_shooterLeader = new CANSparkMax(ShooterConstants.kShooterLeaderID, MotorType.kBrushless);
 
         m_shooterLeader.restoreFactoryDefaults();
-        m_shooterLeader.setInverted(true);
+        m_shooterLeader.setInverted(false);
         m_shooterLeader.setIdleMode(IdleMode.kCoast);
 
         // m_shooterFollower = new CANSparkMax(ShooterConstants.kShooterFollowerID, MotorType.kBrushless);

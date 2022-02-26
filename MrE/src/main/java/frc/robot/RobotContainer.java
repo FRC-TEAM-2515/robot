@@ -78,11 +78,11 @@ public class RobotContainer {
                 // SmartDashboard Buttons
                 SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
                 SmartDashboard.putData("cmdDriveToggleCurvatureMode", new cmdDriveToggleCurvatureMode());
-                SmartDashboard.putData("cmdDriveToggleRightStickMode", new cmdDriveToggleRightStickMode());
-                SmartDashboard.putData("cmdShooterSetRPM: setpointMinRPM",
-                                new cmdShooterSetRPM(200, m_shooterSubsystem));
-                SmartDashboard.putData("cmdShooterSetRPM: setpointMaxRPM",
-                                new cmdShooterSetRPM(500, m_shooterSubsystem));
+                // SmartDashboard.putData("cmdDriveToggleRightStickMode", new cmdDriveToggleRightStickMode());
+                // SmartDashboard.putData("cmdShooterSetRPM: setpointMinRPM",
+                //                 new cmdShooterSetRPM(200, m_shooterSubsystem));
+                // SmartDashboard.putData("cmdShooterSetRPM: setpointMaxRPM",
+                //                 new cmdShooterSetRPM(500, m_shooterSubsystem));
                 SmartDashboard.putData("cmdIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
                 SmartDashboard.putData("cmdSafeReset", new cmdSafeReset());
                 SmartDashboard.putData("cmdHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
@@ -163,11 +163,11 @@ public class RobotContainer {
                 // SmartDashboard.putData("btnOperatorShooterSetRPMMax", new
                 // cmdShooterSetRPM(500, m_shooterSubsystem));
 
-                // final JoystickButton btnOperatorIntakeToggle = new
-                // JoystickButton(controllerOperator,
-                // XboxController.Button.kLeftBumper.value);
-                // btnOperatorIntakeToggle.whenPressed(new cmdIntakeToggle(m_intakeSubsystem),
-                // true);
+                final JoystickButton btnOperatorClimbBrake = new
+                JoystickButton(controllerOperator,
+                XboxController.Button.kLeftBumper.value);
+                btnOperatorClimbBrake.whenPressed(new cmdClimbBrake(m_climbStage1Subsystem),
+                true);
                 // SmartDashboard.putData("btnOperatorIntakeToggle", new
                 // cmdIntakeToggle(m_intakeSubsystem));
 
