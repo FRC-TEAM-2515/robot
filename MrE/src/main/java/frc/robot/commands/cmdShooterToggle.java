@@ -53,7 +53,7 @@ public class cmdShooterToggle extends InstantCommand {
             m_shooterSubsystem.setOutput(0.0);
             isRunning = false;
         } else {
-            m_shooterSubsystem.setOutput(1.0);
+            m_shooterSubsystem.setOutput(0.75);
             isRunning = true;
         }
     }
