@@ -33,8 +33,8 @@ public class autoDistanceDrive extends CommandBase {
     private final DriveSubsystem m_driveSubsystem;
     private final double distance;
 
-    final double kP = 0.2;
-    final double kI = 0.2;
+    final double kP = 0.12;
+    final double kI = 0.12;
     final double kD = 0.05;
     final double iLimit = 1;
 
