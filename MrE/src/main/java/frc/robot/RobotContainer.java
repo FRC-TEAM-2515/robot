@@ -247,4 +247,13 @@ public class RobotContainer {
                 return m_trajectoryDefault;
         }
 
+        public void safeReset(){
+                m_driveSubsystem.stopMotors();
+                m_shooterSubsystem.stopMotors();
+                m_climbStage1Subsystem.stopMotors();
+                m_intakeSubsystem.stopMotor();
+                m_intakeDeploySubsystem.stopMotors();
+                m_hopperSubsystem.stopMotors();
+        }
+
 }

@@ -109,4 +109,8 @@ public class IntakeDeploySubsystem extends PIDSubsystem {
     public void resetEncoder(){
         m_encoderIntakeDeploy.reset();
     }
+
+    public void stopMotors() {
+        m_intakeDeploy.set(0.0);
+    }
 }
