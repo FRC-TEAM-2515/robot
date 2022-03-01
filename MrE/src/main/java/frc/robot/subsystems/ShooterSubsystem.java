@@ -60,7 +60,6 @@ public class ShooterSubsystem extends PIDSubsystem {
         m_shooterLeader = new CANSparkMax(ShooterConstants.kShooterLeaderID, MotorType.kBrushless);
 
         m_shooterLeader.restoreFactoryDefaults();
-        m_shooterLeader.setInverted(false);
         m_shooterLeader.setIdleMode(IdleMode.kCoast);
 
         // m_shooterFollower = new CANSparkMax(ShooterConstants.kShooterFollowerID, MotorType.kBrushless);
@@ -68,7 +67,6 @@ public class ShooterSubsystem extends PIDSubsystem {
         // m_shooterFollower.restoreFactoryDefaults();
         // m_shooterFollower.setInverted(false);
         // m_shooterFollower.setIdleMode(IdleMode.kCoast);
-        // m_shooterFollower.follow(m_shooterLeader);
 
         m_shooter = new MotorControllerGroup(m_shooterLeader);
         addChild("m_shooter", m_shooter);
@@ -127,5 +125,11 @@ public class ShooterSubsystem extends PIDSubsystem {
     }
     public void setOutput(double output){
         m_shooter.set(output);
+    }
+    public boolean isRunning(){
+       if(m_shooter.get() != 0.0){
+           return true;
+       }
+       return false;
     }
 }

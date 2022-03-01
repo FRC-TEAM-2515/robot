@@ -79,6 +79,9 @@ public class Constants {
         public static final double kVelocityConversionFactor = 1.0;
         public static int kShooterLeaderID = 19;
         public static int kShooterFollowerID = 18;
+        public static double kShooterPercentOutput = 0.55;
+        public static double kMaxRPM = 2000;
+        public static double kMinRPM = 500;
         public static final double kP = 1.0;
         public static final double kI = 0.0;
         public static final double kD = 0.0;
