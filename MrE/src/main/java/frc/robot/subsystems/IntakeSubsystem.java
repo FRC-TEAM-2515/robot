@@ -66,7 +66,7 @@ public class IntakeSubsystem extends SubsystemBase {
         m_intake.set(output);
     }
 
-    public void stopMotor(){
+    public void stopMotors(){
         m_intake.set(0.0);
     }
 

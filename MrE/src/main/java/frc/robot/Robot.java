@@ -115,10 +115,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit() {
-        m_robotContainer.m_climbStage1Subsystem.stopMotors();
-        m_robotContainer.m_hopperSubsystem.stopMotors();
-        m_robotContainer.m_intakeSubsystem.stopMotor();
-        m_robotContainer.m_shooterSubsystem.stopMotors();
+        m_robotContainer.safeReset();
     }
 
     @Override

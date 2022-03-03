@@ -270,9 +270,10 @@ public class RobotContainer {
                 m_driveSubsystem.stopMotors();
                 m_shooterSubsystem.stopMotors();
                 m_climbStage1Subsystem.stopMotors();
-                m_intakeSubsystem.stopMotor();
+                m_intakeSubsystem.stopMotors();
                 m_intakeDeploySubsystem.stopMotors();
                 m_hopperSubsystem.stopMotors();
+                m_driveSubsystem.resetEncoders();
         }
 
 }
