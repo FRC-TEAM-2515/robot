@@ -13,6 +13,7 @@
 package frc.robot;
 
 import frc.robot.Constants.DriveConstants;
+import frc.robot.Constants.IntakeConstants;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
@@ -274,6 +275,10 @@ public class RobotContainer {
                 m_intakeDeploySubsystem.stopMotors();
                 m_hopperSubsystem.stopMotors();
                 m_driveSubsystem.resetEncoders();
+        }
+
+        public void deployIntake() {
+                new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition);
         }
 
 }

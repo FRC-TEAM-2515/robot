@@ -87,4 +87,8 @@ public class Constants {
         public static final double kD = 0.0;
         public static final double kF = 0.0;
     }
+
+    public static final class IntakeConstants {
+            public static final double kMaxEncoderPosition = 130.0; //144 full deployed
+    }
 }
