@@ -71,6 +71,7 @@ public class HopperSubsystem extends SubsystemBase {
         int proximity = m_colorSensor.getProximity();
         SmartDashboard.putNumber("Proximity", proximity);
         SmartDashboard.putBoolean("Hopper Loaded", isLoaded());
+        SmartDashboard.putNumber("Hopper Motor", m_hopperStage1Leader.get());
     }
 
     @Override

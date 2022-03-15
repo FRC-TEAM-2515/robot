@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.Constants;
@@ -44,7 +45,9 @@ public class complexAuto extends SequentialCommandGroup {
     addCommands(
       new autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance),
       new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition),
-      new cmdShooterSetRPM(ShooterConstants.kAutonomousRPM,m_shooterSubsystem),
+      // new cmdShooterSetRPM(ShooterConstants.kAutonomousRPM,m_shooterSubsystem),
+      new cmdShooterToggle(m_shooterSubsystem),
+      new cmdTimer(ShooterConstants.kSpinupDelay),
       new cmdHopperToggle(m_hopperSubsystem)
     );
   }
