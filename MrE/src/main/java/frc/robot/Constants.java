@@ -91,4 +91,8 @@ public class Constants {
     public static final class IntakeConstants {
             public static final double kMaxEncoderPosition = 130.0; //144 full deployed
     }
+
+    public static final class HopperConstants {
+            public static final double kLoadedProximity = 1000;
+    }
 }

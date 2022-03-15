@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.*;
 
@@ -43,9 +44,9 @@ import frc.robot.subsystems.*;
  */
 public class RobotContainer {
 
-        public static RobotContainer m_robotContainer = new RobotContainer();
+        public RobotContainer m_robotContainer = new RobotContainer();
 
-        public static DriverStation.Alliance allianceColor = DriverStation.getAlliance();
+        public static Alliance allianceColor = DriverStation.getAlliance();
 
         public Trajectory m_trajectoryBL1P1 = new Trajectory();
         public Trajectory m_trajectoryRL1P1 = new Trajectory();
@@ -135,7 +136,7 @@ public class RobotContainer {
                 SmartDashboard.putData("Trajectory", m_trajectoryChooser);
         }
 
-        public static RobotContainer getInstance() {
+        public RobotContainer getInstance() {
                 return m_robotContainer;
         }
 
@@ -292,4 +293,7 @@ public class RobotContainer {
                 }
         }
 
+        public static Alliance getAllianceColor(){
+                return allianceColor;
+        }
 }

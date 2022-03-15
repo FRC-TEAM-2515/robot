@@ -139,4 +139,9 @@ public class ShooterSubsystem extends PIDSubsystem {
        }
        return false;
     }
+
+    public double getRPMFromVision(){
+        // Return RPM using Distance from Vision 
+        return 0;
+    }
 }
