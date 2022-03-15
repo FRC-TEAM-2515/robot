@@ -82,6 +82,7 @@ public class Constants {
         public static double kShooterPercentOutput = 0.55;
         public static double kMaxRPM = 2000;
         public static double kMinRPM = 500;
+        public static double kAutonomousRPM = 1000;
         public static final double kP = 1.0;
         public static final double kI = 0.0;
         public static final double kD = 0.0;

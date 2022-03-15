@@ -115,6 +115,7 @@ public class RobotContainer {
                                 m_driveSubsystem, 
                                 m_shooterSubsystem,
                                 m_hopperSubsystem, 
+                                m_intakeDeploySubsystem,
                                 DriveConstants.kAutoDriveDistance)
                 );
                 m_chooser.setDefaultOption("Reverse Distance",
