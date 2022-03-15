@@ -17,14 +17,14 @@ import frc.robot.subsystems.ShooterSubsystem;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class complexDrive extends SequentialCommandGroup {
+public class complexAuto extends SequentialCommandGroup {
   /** Creates a new complexDrive. */
   private final DriveSubsystem m_driveSubsystem;
   private final ShooterSubsystem m_shooterSubsystem;
   private final HopperSubsystem m_hopperSubsystem;
   private double distance;
 
-  public complexDrive(DriveSubsystem driveSubsystem, ShooterSubsystem shooterSubsystem, HopperSubsystem hopperSubsystem, Double distance) {
+  public complexAuto(DriveSubsystem driveSubsystem, ShooterSubsystem shooterSubsystem, HopperSubsystem hopperSubsystem, Double distance) {
 
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
