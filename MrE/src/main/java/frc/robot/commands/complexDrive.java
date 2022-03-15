@@ -9,21 +9,34 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.Constants.DriveConstants;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.HopperSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
+
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class complexDrive extends SequentialCommandGroup {
   /** Creates a new complexDrive. */
   private final DriveSubsystem m_driveSubsystem;
+  private final ShooterSubsystem m_shooterSubsystem;
+  private final HopperSubsystem m_hopperSubsystem;
   private double distance;
-  public complexDrive(DriveSubsystem subsystem, Double distance) {
-    
+
+  public complexDrive(DriveSubsystem driveSubsystem, ShooterSubsystem shooterSubsystem, HopperSubsystem hopperSubsystem, Double distance) {
+
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    this.m_driveSubsystem = subsystem;
+    this.m_driveSubsystem = driveSubsystem;
+    this.m_shooterSubsystem = shooterSubsystem;
+    this.m_hopperSubsystem = hopperSubsystem;
     this.distance = m_driveSubsystem.getAverageEncoderDistance() + distance;
     addRequirements(m_driveSubsystem);
-    addCommands(new autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance));
+    addCommands(
+      new autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance),
+      new cmdShooterSetRPM(ShooterConstants.kMinRPM,m_shooterSubsystem),
+      new cmdHopperToggle(m_hopperSubsystem)
+    );
   }
 }

@@ -70,4 +70,10 @@ public class IntakeSubsystem extends SubsystemBase {
         m_intake.set(0.0);
     }
 
+    public boolean isRunning(){
+        if(m_intake.get() != 0.0){
+            return true;
+        }
+        return false;
+     }
 }

@@ -279,6 +279,9 @@ public class RobotContainer {
 
         public void deployIntake() {
                 new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition);
+                if (!m_intakeSubsystem.isRunning()) {
+                        new cmdIntakeToggle(m_intakeSubsystem);
+                }
         }
 
 }

@@ -71,4 +71,10 @@ public class HopperSubsystem extends SubsystemBase {
         m_hopperStage1Leader.set(0.0);
     }
 
+    public boolean isRunning(){
+        if(m_hopperStage1Leader.get() != 0.0){
+            return true;
+        }
+        return false;
+     }
 }
