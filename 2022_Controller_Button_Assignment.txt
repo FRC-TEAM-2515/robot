@@ -1,0 +1,17 @@
+DRIVER Controller
+
+Left Stick - Drive Joystick (differential drive
+Right Stick - R Stick turning (turns without driving or can be pressed to turn on R stick drive)
+D-Pad - Nothing
+Left Bumbper - intake start
+Right Bumper - flywheel (high speed)
+X - Hopper start
+Y - Intake start 2
+B - flywheel (constant speed)
+A - Nothing
+Xbox Button - Safe Turnoff everything
+
+
+OPERATOR Controller
+
+Left Stick - up and down for climb
