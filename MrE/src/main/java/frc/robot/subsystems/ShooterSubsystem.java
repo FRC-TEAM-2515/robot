@@ -175,7 +175,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
         SmartDashboard.putNumber("ProcessVariable", m_encoderShooter.getVelocity());
     }
     public void setOutput(double output){
-        m_shooter.set(output);
+        m_shooterLeader.set(output);
     }
     public boolean isRunning(){
        if(m_shooter.get() != 0.0){
