@@ -82,12 +82,26 @@ public class Constants {
         public static double kShooterPercentOutput = 0.55;
         public static double kMaxRPM = 2000;
         public static double kMinRPM = 500;
-        public static double kAutonomousRPM = 200;
-        public static final double kP = 0.007898;
-        public static final double kI = 0.0;
-        public static final double kD = 0.0;
-        public static final double kF = 0.0;
+        public static double kIz = 0;
+        public static double kFF = 0.000015;
+        public static double kMinOutput = 0;
+        public static double kMaxOutput = 1;
+        public static double kP = 6e-5;
+        public static double kI = 0.0;
+        public static double kD = 0.0;
+        public static final double kF = 0.000015;
         public static final double kSpinupDelay = 1;
+        public static double kAutonomousRPM = 200;
+
+        // From example code.
+        // kP = 6e-5; 
+        // kI = 0;
+        // kD = 0; 
+        // kIz = 0; 
+        // kFF = 0.000015; 
+        // kMaxOutput = 1; 
+        // kMinOutput = -1;
+        // maxRPM = 5700;
     }
 
     public static final class IntakeConstants {
