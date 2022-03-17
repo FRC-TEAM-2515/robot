@@ -109,6 +109,6 @@ public class Constants {
     }
 
     public static final class HopperConstants {
-            public static final double kLoadedProximity = 1000;
+            public static final double kLoadedProximity = 100;
     }
 }

@@ -40,7 +40,7 @@ public class IntakeDeploySubsystem extends PIDSubsystem {
     private Encoder m_encoderIntakeDeploy;
     private WPI_TalonSRX m_intakeDeploy;
     // P I D Variables
-    private static final double kP = 0.05;
+    private static final double kP = 0.02;
     private static final double kI = 0.0;
     private static final double kD = 0.0;
     private static final double kF = 0.0;
