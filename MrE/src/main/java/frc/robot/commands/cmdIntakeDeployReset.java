@@ -9,7 +9,8 @@ import frc.robot.subsystems.IntakeDeploySubsystem;
 
 public class cmdIntakeDeployReset extends CommandBase {
   /** Creates a new cmdIntakeDeployReset. */
-  private static final IntakeDeploySubsystem m_intakeDeploySubsystem;
+  private final IntakeDeploySubsystem m_intakeDeploySubsystem;
+  
   public cmdIntakeDeployReset(IntakeDeploySubsystem subsystem) {
     this.m_intakeDeploySubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
@@ -18,7 +19,7 @@ public class cmdIntakeDeployReset extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
+    m_intakeDeploySubsystem.resetEncoder();
   }
 
   // Called every time the scheduler runs while the command is scheduled.

@@ -82,6 +82,7 @@ public class Constants {
         public static double kShooterPercentOutput = 0.55;
         public static double kMaxRPM = 2000;
         public static double kMinRPM = 500;
+        public static double kAutonomousRPM = 200;
         public static double kIz = 0;
         public static double kFF = 0.000015;
         public static double kMinOutput = 0;
@@ -91,7 +92,6 @@ public class Constants {
         public static double kD = 0.0;
         public static final double kF = 0.000015;
         public static final double kSpinupDelay = 1;
-        public static double kAutonomousRPM = 200;
 
         // From example code.
         // kP = 6e-5; 
