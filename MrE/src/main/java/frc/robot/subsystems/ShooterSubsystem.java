@@ -169,16 +169,17 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
         // m_shooter.set(0);
     }
 
-    public void setVelocity(double setPoint){
-        m_pidController.setReference(setPoint, CANSparkMax.ControlType.kVelocity);
-        SmartDashboard.putNumber("SetPoint", setPoint);
+    public void setVelocity(double setpoint){
+        // setpoint = setpoint*ShooterConstants.kMaxRPM;
+        m_pidController.setReference(setpoint, CANSparkMax.ControlType.kVelocity);
+        SmartDashboard.putNumber("SetPoint", setpoint);
         SmartDashboard.putNumber("ProcessVariable", m_encoderShooter.getVelocity());
     }
     public void setOutput(double output){
         m_shooterLeader.set(output);
     }
     public boolean isRunning(){
-       if(m_shooter.get() != 0.0){
+       if(Math.abs(m_shooterLeader.getOutputCurrent()) > 0.0){
            return true;
        }
        return false;

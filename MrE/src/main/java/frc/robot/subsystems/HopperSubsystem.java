@@ -91,7 +91,8 @@ public class HopperSubsystem extends SubsystemBase {
     }
 
     public boolean isRunning(){
-        if(m_hopperStage1Leader.get() != 0.0){
+        if(Math.abs(m_hopperStage1Leader.getMotorOutputPercent()) > 0.0){
+            
             return true;
         }
         return false;

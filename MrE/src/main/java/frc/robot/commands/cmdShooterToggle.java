@@ -48,11 +48,11 @@ public class cmdShooterToggle extends InstantCommand {
     // Called once when this command runs
     @Override
     public void initialize() {
-        if ( m_shooterSubsystem.isRunning()) {
-            m_shooterSubsystem.setOutput(0.0);
-        } else {
+        // if ( m_shooterSubsystem.isRunning()) {
+        //     m_shooterSubsystem.setOutput(0.0);
+        // } else {
             m_shooterSubsystem.setOutput(ShooterConstants.kShooterPercentOutput);
-        }
+        // }
     }
 
     @Override

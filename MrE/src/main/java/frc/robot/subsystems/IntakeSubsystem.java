@@ -71,7 +71,7 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public boolean isRunning(){
-        if(m_intake.get() != 0.0){
+        if(Math.abs(m_intake.getMotorOutputPercent()) > 0.0){
             return true;
         }
         return false;

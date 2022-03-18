@@ -51,7 +51,7 @@ public class cmdHopperToggle extends InstantCommand {
         if (m_hopperSubsystem.isRunning()) {
             m_hopperSubsystem.setOutput(0.0);
         } else {
-            m_hopperSubsystem.setOutput(0.75);
+            m_hopperSubsystem.setOutput(1);
         }
     }
 

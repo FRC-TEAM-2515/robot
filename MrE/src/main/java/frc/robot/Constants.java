@@ -80,9 +80,9 @@ public class Constants {
         public static int kShooterLeaderID = 19;
         public static int kShooterFollowerID = 18;
         public static double kShooterPercentOutput = 0.55;
-        public static double kMaxRPM = 2000;
-        public static double kMinRPM = 500;
-        public static double kAutonomousRPM = 200;
+        public static double kMaxRPM = 5700;
+        public static double kMinRPM = 2500;
+        public static double kAutonomousSetpoint = 2000;
         public static double kIz = 0;
         public static double kFF = 0.000015;
         public static double kMinOutput = 0;
