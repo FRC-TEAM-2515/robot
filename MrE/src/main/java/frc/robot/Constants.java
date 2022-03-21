@@ -87,7 +87,7 @@ public class Constants {
         public static double kFF = 0.000015;
         public static double kMinOutput = 0;
         public static double kMaxOutput = 1;
-        public static double kP = 6e-5;
+        public static double kP = 1.0;
         public static double kI = 0.0;
         public static double kD = 0.0;
         public static final double kF = 0.000015;
