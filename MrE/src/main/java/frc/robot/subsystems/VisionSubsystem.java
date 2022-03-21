@@ -45,6 +45,6 @@ public class VisionSubsystem extends SubsystemBase {
   }
 
   public void setLEDMode(double mode){
-    NetworkTableInstance.getDefault().getTable("limelight").getEntry("<variablename>").setNumber(mode);
+    NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(mode);
   }
 }
