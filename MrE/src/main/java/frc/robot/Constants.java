@@ -114,6 +114,12 @@ public class Constants {
     }
 
     public static final class VisionConstants {
+            // how many degrees back is your limelight rotated from perfectly vertical?
+            public static final double kLimelightMountAngleDegrees = 25.0 ;
+            // distance from the center of the Limelight lens to the floor
+            public static final double kLimelightLensHeightInches = 20.0;
+            // distance from the target to the floor
+            public static final double kGoalHeightInches = 60; 
             public static final double kLimelightMountAngleDegrees = 20.0 ;
             public static final double kLimelightLensHeightInches = 32.0;
             public static final double kGoalHeightInches = 104;
