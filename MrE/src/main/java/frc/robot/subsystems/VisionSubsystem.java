@@ -6,8 +6,10 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.networktables.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.VisionConstants;
 
 public class VisionSubsystem extends SubsystemBase {
+  private static final double limelightMountAngleDegrees = 0;
   double distanceFromLimelightToGoalInches;
   double goalHeightInches;
   double angleToGoalRadians;
@@ -19,15 +21,15 @@ public class VisionSubsystem extends SubsystemBase {
     double targetOffsetAngle_Vertical = ty.getDouble(0.0);
 
     // how many degrees back is your limelight rotated from perfectly vertical?
-    double limelightMountAngleDegrees = 25.0;
+    //public double limelightMountAngleDegrees = 25.0;
 
     // distance from the center of the Limelight lens to the floor
-    limelightLensHeightInches = 20.0;
+    //limelightLensHeightInches = 20.0;
 
     // distance from the target to the floor
-    goalHeightInches = 60.0;
+    //goalHeightInches = 60.0;
 
-    double angleToGoalDegrees = limelightMountAngleDegrees + targetOffsetAngle_Vertical;
+    double angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
     angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
 
   }
@@ -36,7 +38,7 @@ public class VisionSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
         // calculate distance
-        distanceFromLimelightToGoalInches = (goalHeightInches - limelightLensHeightInches)
+        distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
         / Math.tan(angleToGoalRadians);
   }
 
