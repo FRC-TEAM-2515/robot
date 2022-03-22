@@ -97,13 +97,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
         m_pidController.setFF(ShooterConstants.kFF);
         m_pidController.setOutputRange(ShooterConstants.kMinOutput, ShooterConstants.kMaxOutput);
 
-        SmartDashboard.putNumber("Shooter P Gain", ShooterConstants.kP);
-        SmartDashboard.putNumber("Shooter I Gain", ShooterConstants.kI);
-        SmartDashboard.putNumber("Shooter D Gain", ShooterConstants.kD);
-        SmartDashboard.putNumber("Shooter I Zone", ShooterConstants.kIz);
-        SmartDashboard.putNumber("Shooter Feed Forward", ShooterConstants.kFF);
-        SmartDashboard.putNumber("Shooter Max Output", ShooterConstants.kMaxOutput);
-        SmartDashboard.putNumber("Shooter Min Output", ShooterConstants.kMinOutput);
+        // SmartDashboard.putNumber("Shooter P Gain", ShooterConstants.kP);
+        // SmartDashboard.putNumber("Shooter I Gain", ShooterConstants.kI);
+        // SmartDashboard.putNumber("Shooter D Gain", ShooterConstants.kD);
+        // SmartDashboard.putNumber("Shooter I Zone", ShooterConstants.kIz);
+        // SmartDashboard.putNumber("Shooter Feed Forward", ShooterConstants.kFF);
+        // SmartDashboard.putNumber("Shooter Max Output", ShooterConstants.kMaxOutput);
+        // SmartDashboard.putNumber("Shooter Min Output", ShooterConstants.kMinOutput);
     }
 
     @Override
@@ -117,22 +117,22 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
         // }
         // super.periodic();
         SmartDashboard.putNumber("Shooter Velocity", m_encoderShooter.getVelocity());
-        double p = SmartDashboard.getNumber("Shooter P Gain", 0);
-        double i = SmartDashboard.getNumber("Shooter I Gain", 0);
-        double d = SmartDashboard.getNumber("Shooter D Gain", 0);
-        double iz = SmartDashboard.getNumber("Shooter I Zone", 0);
-        double ff = SmartDashboard.getNumber("Shooter Feed Forward", 0);
-        double max = SmartDashboard.getNumber("Shooter Max Output", 0);
-        double min = SmartDashboard.getNumber("Shooter Min Output", 0);
-        if((p != ShooterConstants.kP)) { m_pidController.setP(p); ShooterConstants.kP = p; }
-        if((i != ShooterConstants.kI)) { m_pidController.setI(i); ShooterConstants.kI = i; }
-        if((d != ShooterConstants.kD)) { m_pidController.setD(d); ShooterConstants.kD = d; }
-        if((iz != ShooterConstants.kIz)) { m_pidController.setIZone(iz); ShooterConstants.kIz = iz; }
-        if((ff != ShooterConstants.kFF)) { m_pidController.setFF(ff); ShooterConstants.kFF = ff; }
-        if((max != ShooterConstants.kMaxOutput) || (min != ShooterConstants.kMinOutput)) { 
-          m_pidController.setOutputRange(min, max); 
-          ShooterConstants.kMinOutput = min; ShooterConstants.kMaxOutput = max; 
-        }
+        // double p = SmartDashboard.getNumber("Shooter P Gain", 0);
+        // double i = SmartDashboard.getNumber("Shooter I Gain", 0);
+        // double d = SmartDashboard.getNumber("Shooter D Gain", 0);
+        // double iz = SmartDashboard.getNumber("Shooter I Zone", 0);
+        // double ff = SmartDashboard.getNumber("Shooter Feed Forward", 0);
+        // double max = SmartDashboard.getNumber("Shooter Max Output", 0);
+        // double min = SmartDashboard.getNumber("Shooter Min Output", 0);
+        // if((p != ShooterConstants.kP)) { m_pidController.setP(p); ShooterConstants.kP = p; }
+        // if((i != ShooterConstants.kI)) { m_pidController.setI(i); ShooterConstants.kI = i; }
+        // if((d != ShooterConstants.kD)) { m_pidController.setD(d); ShooterConstants.kD = d; }
+        // if((iz != ShooterConstants.kIz)) { m_pidController.setIZone(iz); ShooterConstants.kIz = iz; }
+        // if((ff != ShooterConstants.kFF)) { m_pidController.setFF(ff); ShooterConstants.kFF = ff; }
+        // if((max != ShooterConstants.kMaxOutput) || (min != ShooterConstants.kMinOutput)) { 
+        //   m_pidController.setOutputRange(min, max); 
+        //   ShooterConstants.kMinOutput = min; ShooterConstants.kMaxOutput = max; 
+        // }
 
     }
 
@@ -185,8 +185,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
        return false;
     }
 
-    public double getRPMFromVision(){
+    public double getOutputFromVision(){
         // Return RPM using Distance from Vision 
+        // Add formula here, use VisionSubsystem.getDistance()
+        /* Need to do quadratic regression on the stats of output ratio to distance the ball travels, 
+        preferably testing 10 times at regular intervals from the minimum output wanted to the maximum output wanted*/
         return 0;
     }
 
