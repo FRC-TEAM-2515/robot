@@ -13,8 +13,8 @@
   "Window": {
     "###Analyzer": {
       "Collapsed": "0",
-      "Pos": "308,21",
-      "Size": "380,550"
+      "Pos": "309,21",
+      "Size": "380,632"
     },
     "###Generator": {
       "Collapsed": "0",
@@ -23,12 +23,12 @@
     },
     "###Logger": {
       "Collapsed": "0",
-      "Pos": "4,323",
-      "Size": "310,385"
+      "Pos": "0,328",
+      "Size": "310,483"
     },
     "###Program Log": {
       "Collapsed": "0",
-      "Pos": "320,580",
+      "Pos": "309,654",
       "Size": "360,135"
     },
     "Debug##Default": {
@@ -38,18 +38,23 @@
     },
     "Deploy Status": {
       "Collapsed": "0",
-      "Pos": "353,70",
-      "Size": "683,564"
+      "Pos": "402,84",
+      "Size": "800,669"
     },
     "Diagnostic Plots": {
       "Collapsed": "0",
       "Pos": "685,25",
       "Size": "590,690"
     },
+    "Override Units": {
+      "Collapsed": "0",
+      "Pos": "600,335",
+      "Size": "400,167"
+    },
     "Warning": {
       "Collapsed": "0",
-      "Pos": "657,3",
-      "Size": "89,699"
+      "Pos": "759,3",
+      "Size": "89,831"
     }
   }
 }

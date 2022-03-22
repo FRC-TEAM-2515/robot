@@ -170,7 +170,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
     }
 
     public void setVelocity(double setpoint){
-        // setpoint = setpoint*ShooterConstants.kMaxRPM;
+        setpoint = setpoint*ShooterConstants.kMaxRPM;
         m_pidController.setReference(setpoint, CANSparkMax.ControlType.kVelocity);
         SmartDashboard.putNumber("SetPoint", setpoint);
         SmartDashboard.putNumber("ProcessVariable", m_encoderShooter.getVelocity());

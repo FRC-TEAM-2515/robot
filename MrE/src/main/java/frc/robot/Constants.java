@@ -81,16 +81,16 @@ public class Constants {
         public static int kShooterFollowerID = 18;
         public static double kShooterPercentOutput = 0.55;
         public static double kMaxRPM = 5700;
-        public static double kMinRPM = 2500;
+        public static double kMinRPM = 0;
         public static double kAutonomousSetpoint = 2000;
         public static double kIz = 0;
-        public static double kFF = 0.000015;
+        public static double kFF = 0.00025;
         public static double kMinOutput = 0;
         public static double kMaxOutput = 1;
-        public static double kP = 1.0;
+        public static double kP = 0.00012;
         public static double kI = 0.0;
         public static double kD = 0.0;
-        public static final double kF = 0.000015;
+        // public static final double kF = 0.00025;
         public static final double kSpinupDelay = 1;
 
         // From example code.

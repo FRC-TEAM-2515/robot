@@ -4,6 +4,7 @@
     "NetworkTables Settings": {
       "serverTeam": "2515"
     },
+    "mode": "Client",
     "serverTeam": "2515"
   }
 }

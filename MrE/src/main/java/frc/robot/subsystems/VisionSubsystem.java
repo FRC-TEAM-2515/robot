@@ -9,11 +9,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.VisionConstants;
 
 public class VisionSubsystem extends SubsystemBase {
-  private static final double limelightMountAngleDegrees = 0;
+  // private static final double limelightMountAngleDegrees = 0;
   double distanceFromLimelightToGoalInches;
-  double goalHeightInches;
+  // double goalHeightInches;
   double angleToGoalRadians;
-  double limelightLensHeightInches;
+  // double limelightLensHeightInches;
   /** Creates a new VisionSubsystem. */
   public VisionSubsystem() {
     NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");

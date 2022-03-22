@@ -45,7 +45,7 @@ public class complexAuto extends SequentialCommandGroup {
     addCommands(
       // new autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance),
       // new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition),
-      new cmdShooterSetRPM(ShooterConstants.kAutonomousSetpoint,m_shooterSubsystem),
+      new cmdShooterSetRPM(ShooterConstants.kShooterPercentOutput,m_shooterSubsystem),
       // new cmdShooterToggle(m_shooterSubsystem),
       // new cmdTimer(ShooterConstants.kSpinupDelay),
       new cmdHopperToggle(m_hopperSubsystem)
