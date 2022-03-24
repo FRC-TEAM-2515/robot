@@ -13,6 +13,7 @@
 package frc.robot.subsystems;
 
 import frc.robot.Constants.ShooterConstants;
+import frc.robot.Constants.VisionConstants;
 import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.math.controller.PIDController;
@@ -120,6 +121,8 @@ import frc.robot.subsystems.VisionSubsystem;
         SmartDashboard.putNumber("Shooter Velocity", m_encoderShooter.getVelocity());
         double o = SmartDashboard.getNumber("Shooter output", 0);
         if((o != ShooterConstants.kShooterPercentOutput)) {ShooterConstants.kShooterPercentOutput = o; }
+        
+        SmartDashboard.putNumber("Target Output", getOutputFromVision());
         // double p = SmartDashboard.getNumber("Shooter P Gain", 0);
         // double i = SmartDashboard.getNumber("Shooter I Gain", 0);
         // double d = SmartDashboard.getNumber("Shooter D Gain", 0);
@@ -193,8 +196,13 @@ import frc.robot.subsystems.VisionSubsystem;
         // Add formula here, use VisionSubsystem.getDistance()
         /* Need to do quadratic regression on the stats of output ratio to distance the ball travels, 
         preferably testing 10 times at regular intervals from the minimum output wanted to the maximum output wanted*/
-        /* We need to find the proportion for the percentage output to the distance, basically output divided by the distance would be ko which we could then multiply by distance to get the output we need*/
-        double output = VisionSubsystem.getDistance() / 5700 ;
+        /* We need to find the proportion for the percentage output to the distance, basically output divided by the 
+        distance would be ko which we could then multiply by distance to get the output we need*/
+        double kao = -0.0000154321;
+        double kbo = 0.005277777;
+        double c = 0.38;
+        double distance = VisionSubsystem.getDistance();
+        double output = kao * (distance * distance) + kbo * distance + c;
         return output;
     }
 
