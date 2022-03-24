@@ -11,7 +11,7 @@ import frc.robot.Constants.VisionConstants;
 
 public class VisionSubsystem extends SubsystemBase {
   // private static final double limelightMountAngleDegrees = 0;
-  double distanceFromLimelightToGoalInches;
+  static double distanceFromLimelightToGoalInches;
   // double goalHeightInches;
   double angleToGoalRadians;
   // double limelightLensHeightInches;
@@ -45,7 +45,7 @@ public class VisionSubsystem extends SubsystemBase {
     SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
 
-  public double getDistance(){
+  public static double getDistance(){
     return distanceFromLimelightToGoalInches;
   }
 
