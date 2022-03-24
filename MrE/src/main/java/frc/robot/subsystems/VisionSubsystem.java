@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.networktables.*;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.VisionConstants;
 
@@ -37,9 +38,11 @@ public class VisionSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-        // calculate distance
+        // calculate horizontal distance
         distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
         / Math.tan(angleToGoalRadians);
+    SmartDashboard.putBoolean("Target Found", isTargetFound());
+    SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
 
   public double getDistance(){
@@ -49,4 +52,11 @@ public class VisionSubsystem extends SubsystemBase {
   public void setLEDMode(double mode){
     NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(mode);
   }
+
+  public boolean isTargetFound(){
+    if(NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0) == 1){
+      return true;
+    }
+    return false;
+  } 
 }
