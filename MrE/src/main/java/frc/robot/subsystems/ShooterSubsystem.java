@@ -117,6 +117,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
         // }
         // super.periodic();
         SmartDashboard.putNumber("Shooter Velocity", m_encoderShooter.getVelocity());
+        double o = SmartDashboard.getNumber("Shooter output", 0);
+        if((o != ShooterConstants.kShooterPercentOutput)) {ShooterConstants.kShooterPercentOutput = o; }
         // double p = SmartDashboard.getNumber("Shooter P Gain", 0);
         // double i = SmartDashboard.getNumber("Shooter I Gain", 0);
         // double d = SmartDashboard.getNumber("Shooter D Gain", 0);

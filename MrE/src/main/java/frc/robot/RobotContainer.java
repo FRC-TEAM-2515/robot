@@ -95,6 +95,7 @@ public class RobotContainer {
                 SmartDashboard.putData("cmdIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
                 SmartDashboard.putData("cmdSafeReset", new cmdSafeReset());
                 SmartDashboard.putData("cmdHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
+                SmartDashboard.putNumber("Shooter output", ShooterConstants.kShooterPercentOutput);
                 // SmartDashboard.putData("cmdShoot", new cmdShoot(m_shooterSubsystem,
                 // m_hopperSubsystem));
 
