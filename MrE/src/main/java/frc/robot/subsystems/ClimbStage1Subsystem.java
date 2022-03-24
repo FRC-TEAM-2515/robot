@@ -103,11 +103,10 @@ public class ClimbStage1Subsystem extends SubsystemBase {
             if(value > 0.0){
                 return (value - deadBand) * (value - deadBand);
             } else{
-                return -1 * (value + deadBand) *(value + deadBand)
+                return -1 * (value + deadBand) *(value + deadBand);
             }
         } else {
             return 0.0;
         }
-        return value;
     }
 }
