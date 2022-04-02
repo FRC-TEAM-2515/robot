@@ -113,7 +113,7 @@ public class Constants {
     }
 
     public static final class VisionConstants {
-            public static final double kLimelightMountAngleDegrees = 70.0 ;
+            public static final double kLimelightMountAngleDegrees = 20.0 ;
             public static final double kLimelightLensHeightInches = 32.0;
             public static final double kGoalHeightInches = 104;
     }
