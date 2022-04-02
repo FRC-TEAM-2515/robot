@@ -12,8 +12,10 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.Constants.HopperConstants;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -103,6 +105,7 @@ public class HopperSubsystem extends SubsystemBase {
             RobotContainer.getInstance().m_intakeSubsystem.stopMotors();
             return true;
         }
+        RobotContainer.getInstance().m_shooterSubsystem.setOutput(ShooterConstants.kShooterPercentOutput);
         return false;
     }
 
