@@ -105,7 +105,11 @@ public class HopperSubsystem extends SubsystemBase {
             RobotContainer.getInstance().m_intakeSubsystem.stopMotors();
             return true;
         }
+<<<<<<< HEAD
        // RobotContainer.getInstance().m_intakeSubsystem.setOutput(1);
+=======
+        RobotContainer.getInstance().m_intakeSubsystem.setOutput(1);
+>>>>>>> 25fd40fb3421b5d78bef3348e92e2eac7de85fad
         return false;
     }
 
