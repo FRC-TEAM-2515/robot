@@ -62,6 +62,7 @@ public class RobotContainer {
         public final IntakeDeploySubsystem m_intakeDeploySubsystem = new IntakeDeploySubsystem();
         public final IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
         public final DriveSubsystem m_driveSubsystem = new DriveSubsystem();
+        public final VisionSubsystem m_VisionSubsystem = new VisionSubsystem();
 
         // Joysticks
         private final XboxController controllerOperator = new XboxController(1);
@@ -114,12 +115,11 @@ public class RobotContainer {
 
                 m_chooser.addOption("Autonomous Command", new AutonomousCommand());
                 m_chooser.addOption("Complex Auto", new complexAuto(
-                                m_driveSubsystem, 
+                                m_driveSubsystem,
                                 m_shooterSubsystem,
-                                m_hopperSubsystem, 
+                                m_hopperSubsystem,
                                 m_intakeDeploySubsystem,
-                                DriveConstants.kAutoDriveDistance)
-                );
+                                DriveConstants.kAutoDriveDistance));
                 m_chooser.setDefaultOption("Reverse Distance",
                                 new autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance));
 
@@ -185,10 +185,31 @@ public class RobotContainer {
                 // SmartDashboard.putData("btnOperatorShooterSetRPMMax", new
                 // cmdShooterSetRPM(500, m_shooterSubsystem));
 
-                final JoystickButton btnOperatorClimbBrake = new JoystickButton(controllerOperator,
+                // final JoystickButton btnOperatorClimbBrake = new
+                // JoystickButton(controllerOperator,
+                // XboxController.Button.kLeftBumper.value);
+                // btnOperatorClimbBrake.whenPressed(new cmdClimbBrake(m_climbStage1Subsystem),
+                // true);
+
+                final JoystickButton btnOperatorIntakeToggle = new JoystickButton(controllerOperator,
                                 XboxController.Button.kLeftBumper.value);
-                btnOperatorClimbBrake.whenPressed(new cmdClimbBrake(m_climbStage1Subsystem),
-                                true);
+                btnOperatorIntakeToggle.whenPressed(new cmdIntakeToggle(m_intakeSubsystem), true);
+                SmartDashboard.putData("Intake Toggle", new cmdIntakeToggle(m_intakeSubsystem));
+
+                final JoystickButton btnOperatorShooterToggle = new JoystickButton(controllerOperator,
+                                XboxController.Button.kB.value);
+                btnOperatorShooterToggle.whenPressed(new cmdShooterToggle(m_shooterSubsystem), true);
+
+                final JoystickButton btnOperatorHopperToggle = new JoystickButton(controllerOperator,
+                                XboxController.Button.kX.value);
+                btnOperatorHopperToggle.whenPressed(new cmdHopperToggle(m_hopperSubsystem), true);
+                SmartDashboard.putData("btnHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
+
+                final JoystickButton btnOperatorShooterSetRPMMin = new JoystickButton(controllerOperator,
+                                XboxController.Button.kA.value);
+                btnOperatorShooterSetRPMMin.whenPressed(new cmdShooterSetRPM(ShooterConstants.kMinRPM,
+                                m_shooterSubsystem), true);
+
                 // SmartDashboard.putData("btnOperatorIntakeToggle", new
                 // cmdIntakeToggle(m_intakeSubsystem));
 
@@ -298,7 +319,7 @@ public class RobotContainer {
                 }
         }
 
-        public static Alliance getAllianceColor(){
+        public static Alliance getAllianceColor() {
                 return allianceColor;
         }
 }

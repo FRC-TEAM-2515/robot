@@ -40,12 +40,14 @@ public class VisionSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
         // calculate horizontal distance
         distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
-        / Math.tan(angleToGoalRadians);
-    SmartDashboard.putBoolean("Target Found", isTargetFound());
-    SmartDashboard.putNumber("Horizontal Distance", getDistance());
+        / Math.tan(angleToGoalRadians);    
+        SmartDashboard.putBoolean("Target Found", isTargetFound());
+        SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
 
-  public static double getDistance(){
+  public double getDistance(){
+    distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
+        / Math.tan(angleToGoalRadians); 
     return distanceFromLimelightToGoalInches;
   }
 

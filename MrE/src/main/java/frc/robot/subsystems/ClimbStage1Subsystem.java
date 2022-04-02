@@ -79,8 +79,8 @@ public class ClimbStage1Subsystem extends SubsystemBase {
 
     public void setOutput() {
         double output = applyDeadband(RobotContainer.getInstance().getcontrollerOperator().getLeftY());
-        m_climbMotorLeader.set(output);
-        m_climbMotorFollower.set(output);
+        // m_climbMotorLeader.set(output);
+        // m_climbMotorFollower.set(output);
     }
 
     public void setBrake() {
