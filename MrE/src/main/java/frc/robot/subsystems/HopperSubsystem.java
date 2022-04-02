@@ -100,6 +100,7 @@ public class HopperSubsystem extends SubsystemBase {
 
     public boolean isLoaded(){
         if (m_colorSensor.getProximity() > HopperConstants.kLoadedProximity){
+            RobotContainer.getInstance().m_intakeSubsystem.stopMotors();
             return true;
         }
         return false;
