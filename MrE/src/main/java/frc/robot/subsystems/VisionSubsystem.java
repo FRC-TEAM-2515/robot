@@ -13,7 +13,8 @@ public class VisionSubsystem extends SubsystemBase {
   // private static final double limelightMountAngleDegrees = 0;
   static double distanceFromLimelightToGoalInches;
   // double goalHeightInches;
-  double angleToGoalRadians;
+  static double angleToGoalRadians;
+  static double angleToGoalDegrees;
   // double limelightLensHeightInches;
   /** Creates a new VisionSubsystem. */
   public VisionSubsystem() {
@@ -30,7 +31,7 @@ public class VisionSubsystem extends SubsystemBase {
     // distance from the target to the floor
     //goalHeightInches = 60.0;
 
-    double angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
+    angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
     angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
 
   }
@@ -45,10 +46,14 @@ public class VisionSubsystem extends SubsystemBase {
         SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
 
-  public double getDistance(){
+  public static double getDistance(){
     distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
         / Math.tan(angleToGoalRadians); 
     return distanceFromLimelightToGoalInches;
+  }
+
+  public double getAngleToGoalRadians(){
+    return angleToGoalRadians;
   }
 
   public void setLEDMode(double mode){
