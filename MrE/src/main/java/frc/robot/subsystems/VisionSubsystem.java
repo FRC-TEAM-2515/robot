@@ -33,8 +33,6 @@ public class VisionSubsystem extends SubsystemBase {
     // distance from the target to the floor
     //goalHeightInches = 60.0;
 
-    angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
-    angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
 
   }
 
@@ -43,7 +41,8 @@ public class VisionSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
         // calculate horizontal distance
         targetOffsetAngle_Vertical = table.getEntry("ty").getDouble(0.0);
-
+        angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
+        angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
         SmartDashboard.putBoolean("Target Found", isTargetFound());
         SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
@@ -55,6 +54,7 @@ public class VisionSubsystem extends SubsystemBase {
   }
 
   public double getAngleToGoalRadians(){
+
     return angleToGoalRadians;
   }
 
