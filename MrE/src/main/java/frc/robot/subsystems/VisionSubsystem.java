@@ -42,7 +42,7 @@ public class VisionSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
         // calculate horizontal distance
-        table.getEntry("ty").getDouble(0.0);
+        targetOffsetAngle_Vertical = table.getEntry("ty").getDouble(0.0);
 
         SmartDashboard.putBoolean("Target Found", isTargetFound());
         SmartDashboard.putNumber("Horizontal Distance", getDistance());
