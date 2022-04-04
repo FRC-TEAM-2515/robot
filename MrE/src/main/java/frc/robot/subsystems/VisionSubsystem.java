@@ -10,52 +10,32 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.VisionConstants;
 
 public class VisionSubsystem extends SubsystemBase {
-  // private static final double limelightMountAngleDegrees = 0;
   static double distanceFromLimelightToGoalInches;
-  // double goalHeightInches;
   static double angleToGoalRadians;
   static double angleToGoalDegrees;
-  // double limelightLensHeightInches;
-  /** Creates a new VisionSubsystem. */
-  double targetOffsetAngle_Vertical;
-  NetworkTable table;
-  NetworkTableEntry ty;
+  private static double targetOffsetAngle_Vertical;
+  private static NetworkTable table;
+
   public VisionSubsystem() {
     table = NetworkTableInstance.getDefault().getTable("limelight");
-    NetworkTableEntry ty = table.getEntry("ty");
-
-    // how many degrees back is your limelight rotated from perfectly vertical?
-    //public double limelightMountAngleDegrees = 25.0;
-
-    // distance from the center of the Limelight lens to the floor
-    //limelightLensHeightInches = 20.0;
-
-    // distance from the target to the floor
-    //goalHeightInches = 60.0;
-
 
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-        // calculate horizontal distance
-        targetOffsetAngle_Vertical = table.getEntry("ty").getDouble(0.0);
-        angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
-        angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
-        SmartDashboard.putBoolean("Target Found", isTargetFound());
-        SmartDashboard.putNumber("Horizontal Distance", getDistance());
+    SmartDashboard.putBoolean("Target Found", isTargetFound());
+    SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
 
   public static double getDistance(){
+    // calculate horizontal distance
+    targetOffsetAngle_Vertical = table.getEntry("ty").getDouble(0.0);
+    angleToGoalDegrees = VisionConstants.kLimelightMountAngleDegrees + targetOffsetAngle_Vertical;
+    angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
     distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
         / Math.tan(angleToGoalRadians); 
     return distanceFromLimelightToGoalInches;
-  }
-
-  public double getAngleToGoalRadians(){
-
-    return angleToGoalRadians;
   }
 
   public void setLEDMode(double mode){
