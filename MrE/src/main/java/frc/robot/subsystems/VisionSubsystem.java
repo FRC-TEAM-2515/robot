@@ -19,10 +19,10 @@ public class VisionSubsystem extends SubsystemBase {
   /** Creates a new VisionSubsystem. */
   double targetOffsetAngle_Vertical;
   NetworkTable table;
-  NetworkTableEntry ty = table.getEntry("ty");
+  NetworkTableEntry ty;
   public VisionSubsystem() {
     table = NetworkTableInstance.getDefault().getTable("limelight");
-    
+    NetworkTableEntry ty = table.getEntry("ty");
 
     // how many degrees back is your limelight rotated from perfectly vertical?
     //public double limelightMountAngleDegrees = 25.0;
@@ -42,10 +42,8 @@ public class VisionSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
         // calculate horizontal distance
-        targetOffsetAngle_Vertical = ty.getDouble(0.0);
+        table.getEntry("ty").getDouble(0.0);
 
-        distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
-        / Math.tan(angleToGoalRadians);    
         SmartDashboard.putBoolean("Target Found", isTargetFound());
         SmartDashboard.putNumber("Horizontal Distance", getDistance());
   }
@@ -70,4 +68,5 @@ public class VisionSubsystem extends SubsystemBase {
     }
     return false;
   } 
+
 }
