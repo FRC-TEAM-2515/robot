@@ -85,8 +85,9 @@ public class Constants {
         public static double kAutonomousSetpoint = 2000;
         public static double kIz = 0;
         public static double kFF = 0.00025;
-        public static double kMinOutput = 0;
-        public static double kMaxOutput = 1;
+        public static double kMinOutput = .50;
+        public static double kMidOutput = .62;
+        public static double kMaxOutput = .75;
         public static double kP = 0.00012;
         public static double kI = 0.0;
         public static double kD = 0.0;

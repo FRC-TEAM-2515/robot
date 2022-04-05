@@ -266,4 +266,21 @@ public class DriveSubsystem extends SubsystemBase {
         m_driveLeft.set(leftSpeed);
         m_driveRight.set(rightSpeed);
     }
+    
+    public void setSteeringAdjustment(){
+        double Kp = -0.1f;
+        double min_command = 0.05f;
+        double tx = VisionSubsystem.getTx();
+        double heading_error = -tx;
+        double steering_adjust = 0.0f;
+        if (tx > 1.0){
+            steering_adjust = Kp*heading_error - min_command;
+        }
+        else if (tx < 1.0){
+            steering_adjust = Kp*heading_error + min_command;
+        }
+        double left_command = steering_adjust;
+        double right_command = -steering_adjust;
+        tankDriveSpeed(left_command, right_command);
+    }
 }

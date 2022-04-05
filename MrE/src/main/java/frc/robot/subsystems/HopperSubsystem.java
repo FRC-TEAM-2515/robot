@@ -84,24 +84,24 @@ public class HopperSubsystem extends SubsystemBase {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void setOutput(double output){
+    public void setOutput(double output) {
         m_hopperStage1Leader.set(output);
     }
 
-    public void stopMotors(){
+    public void stopMotors() {
         m_hopperStage1Leader.set(0.0);
     }
 
-    public boolean isRunning(){
-        if(Math.abs(m_hopperStage1Leader.getMotorOutputPercent()) > 0.0){
-            
+    public boolean isRunning() {
+        if (Math.abs(m_hopperStage1Leader.getMotorOutputPercent()) > 0.0) {
+
             return true;
         }
         return false;
-     }
+    }
 
-    public boolean isLoaded(){
-        if (m_colorSensor.getProximity() > HopperConstants.kLoadedProximity){
+    public boolean isLoaded() {
+        if (m_colorSensor.getProximity() > HopperConstants.kLoadedProximity) {
             RobotContainer.getInstance().m_intakeSubsystem.stopMotors();
             RobotContainer.getInstance().m_VisionSubsystem.setLEDMode(1);
             return true;
@@ -111,7 +111,7 @@ public class HopperSubsystem extends SubsystemBase {
         return false;
     }
 
-    public boolean isCorrectColor(){
+    public boolean isCorrectColor() {
         return false;
     }
 }
