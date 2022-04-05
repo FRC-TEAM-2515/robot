@@ -222,10 +222,10 @@ public class RobotContainer {
                 // SmartDashboard.putData("btnOperatorIntakeToggle", new
                 // cmdIntakeToggle(m_intakeSubsystem));
 
-                // final JoystickButton btnShoot = new JoystickButton(controllerPilot,
-                // XboxController.Button.kRightBumper.value);
-                // btnShoot.whenPressed(new cmdShoot(m_shooterSubsystem, m_hopperSubsystem),
-                // true);
+                final JoystickButton btnShoot = new JoystickButton(controllerPilot,
+                XboxController.Button.kRightBumper.value);
+                btnShoot.whenPressed(new cmdShooterToggle(ShooterConstants.kMinOutput, m_shooterSubsystem),
+                true);
                 // SmartDashboard.putData("btnShoot", new cmdShoot(m_shooterSubsystem,
                 // m_hopperSubsystem));
 
@@ -246,7 +246,7 @@ public class RobotContainer {
 
                 final JoystickButton btnShooterSetRPMMin = new JoystickButton(controllerPilot,
                                 XboxController.Button.kA.value);
-                btnShooterSetRPMMin.whenPressed(new cmdShooterToggle(ShooterConstants.kMinOutput,
+                btnShooterSetRPMMin.whenPressed(new cmdShooterToggle(ShooterConstants.kMidOutput,
                                 m_shooterSubsystem), true);
 
                 final JoystickButton btnShooterToggle = new JoystickButton(controllerPilot,
