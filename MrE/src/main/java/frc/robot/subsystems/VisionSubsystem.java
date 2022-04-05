@@ -49,4 +49,12 @@ public class VisionSubsystem extends SubsystemBase {
     return false;
   } 
 
+  public static double getTx() {
+		return table.getEntry("tx").getDouble(0.0);
+	}
+
+  public static double getTy() {
+		return table.getEntry("ty").getDouble(0.0);
+	}
+  
 }

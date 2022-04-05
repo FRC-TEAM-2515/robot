@@ -198,11 +198,15 @@ import frc.robot.subsystems.VisionSubsystem;
         preferably testing 10 times at regular intervals from the minimum output wanted to the maximum output wanted*/
         /* We need to find the proportion for the percentage output to the distance, basically output divided by the 
         distance would be ko which we could then multiply by distance to get the output we need*/
-        double kao = -0.0000154321;
-        double kbo = 0.005277777;
-        double c = 0.38;
+        double output;
         double distance = VisionSubsystem.getDistance();
-        double output = kao * (distance * distance) + kbo * distance + c;
+        if(distance < 66){
+        output = 0.50;
+        } else if (distance > 144){
+        output = .75;
+        }else{
+        output = 0.0000000004 * Math.pow(distance, 4) - 0.000000554 * Math.pow(distance, 3) + 0.0001437401 * Math.pow(distance, 2) -0.0112573212 * distance + 0.7682;
+        }
         return output;
     }
 
