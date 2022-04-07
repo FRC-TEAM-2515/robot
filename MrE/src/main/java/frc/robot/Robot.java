@@ -20,7 +20,7 @@ import edu.wpi.first.math.trajectory.TrajectoryUtil;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import edu.wpi.first.cameraserver.CameraServer;
+//import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -64,7 +64,7 @@ public class Robot extends TimedRobot {
         m_robotContainer.m_driveSubsystem.resetEncoders();
         m_robotContainer.m_driveSubsystem.resetGyro();
         m_robotContainer.m_intakeDeploySubsystem.resetEncoder();
-        CameraServer.startAutomaticCapture();
+        //CameraServer.startAutomaticCapture();
         rangeFinder = new AnalogPotentiometer(0, 180, 30);
 
         try {
