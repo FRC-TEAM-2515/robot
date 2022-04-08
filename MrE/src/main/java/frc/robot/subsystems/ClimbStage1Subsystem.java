@@ -84,8 +84,9 @@ public class ClimbStage1Subsystem extends SubsystemBase {
     }
 
     public void setBrake() {
-        m_climbMotorLeader.set(0.3);
-        m_climbMotorFollower.set(0.3);
+        m_climbMotorLeader.set(-0.3);
+        m_climbMotorFollower.set(-0.3);
+        //Negative if climb cable is wound underneath and vice versa
     }
 
     public void stopMotors() {
