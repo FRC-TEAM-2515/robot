@@ -26,6 +26,7 @@ public class VisionSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
     SmartDashboard.putBoolean("Target Found", isTargetFound());
     SmartDashboard.putNumber("Horizontal Distance", getDistance());
+    SmartDashboard.putNumber("Tx", getTx());
   }
 
   

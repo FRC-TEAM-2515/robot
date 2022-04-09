@@ -287,5 +287,7 @@ public class DriveSubsystem extends SubsystemBase {
 
         }
 
-
+    public boolean isRobotSquare(){
+        return true;
+    }
 }
