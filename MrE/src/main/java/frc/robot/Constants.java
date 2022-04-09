@@ -52,7 +52,7 @@ public class Constants {
 
         public static final double kAutoDriveForwardSpeed = 0.5;
         public static final double kAutoDriveForwardDistance = 5;
-        public static final double kAutoDriveDistance = -1; //Meters
+        public static double kAutoDriveDistance = -1.3; //Meters
 
 
         // The Robot Characterization Toolsuite provides a convenient tool for obtaining
@@ -86,7 +86,7 @@ public class Constants {
         public static double kIz = 0;
         public static double kFF = 0.00025;
         public static double kMinOutput = 0.0;
-        public static double kMidOutput = 0.5;  //2800 RPM
+        public static double kMidOutput = 0.57;  //2800 RPM
         public static double kMaxOutput = 0.75;
         public static double kP = 0.00012;
         public static double kI = 0.0;

@@ -37,21 +37,9 @@ public class VisionSubsystem extends SubsystemBase {
     angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
     distanceFromLimelightToGoalInches = (VisionConstants.kGoalHeightInches - VisionConstants.kLimelightLensHeightInches)
         / Math.tan(angleToGoalRadians); 
-    fixDistance();
+   // fixDistance();
     return distanceFromLimelightToGoalInches;
   }
-
-  public static void fixDistance(){
-      double saveDistance = distanceFromLimelightToGoalInches;
-      if(197.9 < distanceFromLimelightToGoalInches || distanceFromLimelightToGoalInches < 196.9){
-        saveDistance = distanceFromLimelightToGoalInches; 
-      }
-       else {
-        distanceFromLimelightToGoalInches = saveDistance;
-       }
-      }
-    
-  
   
 
   public void setLEDMode(double mode){
@@ -60,10 +48,13 @@ public class VisionSubsystem extends SubsystemBase {
 
   public boolean isTargetFound(){
     if(NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0) == 1){
+     //public double saveDistance = getDistance();
       return true;
     }
     return false;
+  
   } 
+
 
   public static double getTx() {
 		return table.getEntry("tx").getDouble(0.0);

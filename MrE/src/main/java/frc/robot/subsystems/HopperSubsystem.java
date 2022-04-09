@@ -67,13 +67,13 @@ public class HopperSubsystem extends SubsystemBase {
         // This method will be called once per scheduler run
         detectedColor = m_colorSensor.getColor();
         double IR = m_colorSensor.getIR();
-        SmartDashboard.putNumber("Red", detectedColor.red);
-        SmartDashboard.putNumber("Blue", detectedColor.blue);
-        SmartDashboard.putNumber("IR", IR);
+        // SmartDashboard.putNumber("Red", detectedColor.red);
+        // SmartDashboard.putNumber("Blue", detectedColor.blue);
+        // SmartDashboard.putNumber("IR", IR);
         int proximity = m_colorSensor.getProximity();
-        SmartDashboard.putNumber("Proximity", proximity);
+        // SmartDashboard.putNumber("Proximity", proximity);
         SmartDashboard.putBoolean("Hopper Loaded", isLoaded());
-        SmartDashboard.putNumber("Hopper Motor", m_hopperStage1Leader.get());
+        // SmartDashboard.putNumber("Hopper Motor", m_hopperStage1Leader.get());
     }
 
     @Override
@@ -105,13 +105,16 @@ public class HopperSubsystem extends SubsystemBase {
             RobotContainer.getInstance().m_intakeSubsystem.setOutput(0);
             RobotContainer.getInstance().m_VisionSubsystem.setLEDMode(0);
             return true;
-        }
-        // RobotContainer.getInstance().m_intakeSubsystem.setOutput(1);
+    
+        }else{
+       // RobotContainer.getInstance().m_intakeSubsystem.setOutput(1);
         RobotContainer.getInstance().m_VisionSubsystem.setLEDMode(1);
         return false;
+        }
     }
 
     public boolean isCorrectColor() {
         return false;
     }
 }
+

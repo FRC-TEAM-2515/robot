@@ -178,11 +178,11 @@ public class DriveSubsystem extends SubsystemBase {
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        SmartDashboard.putBoolean("NaxX Connected", m_gyro.isConnected());
-        SmartDashboard.putNumber("Avg Velocity", getAverageEncoderVelocity());
-        SmartDashboard.putNumber("Avg Distance", getAverageEncoderDistance());
-        SmartDashboard.putBoolean("Curvature Drive", curvatureDriveMode);
-        SmartDashboard.putBoolean("Right Stick Steer", rightStickMode);
+        // SmartDashboard.putBoolean("NaxX Connected", m_gyro.isConnected());
+        // SmartDashboard.putNumber("Avg Velocity", getAverageEncoderVelocity());
+        // SmartDashboard.putNumber("Avg Distance", getAverageEncoderDistance());
+        // SmartDashboard.putBoolean("Curvature Drive", curvatureDriveMode);
+        // SmartDashboard.putBoolean("Right Stick Steer", rightStickMode);
        // SmartDashboard.putBoolean("Is Target Orient", isTargetOrient());
         m_odometry.update(
                 m_gyro.getRotation2d(), m_encoderLeftDrive.getPosition(), m_encoderRightDrive.getPosition());
@@ -270,8 +270,7 @@ public class DriveSubsystem extends SubsystemBase {
     }
 
     public void setSteeringAdjustment(){
-        boolean adjustmentRunning = true;
-        double Kp = -0.1f;
+        double Kp = -0.15f;
         double min_command = 0.05f;
         double tx = VisionSubsystem.getTx();
         double heading_error = -tx;
@@ -288,10 +287,5 @@ public class DriveSubsystem extends SubsystemBase {
 
         }
 
-        // public static boolean isTargetOrient(){
-        //   return true;
-        
-        // }
-     
 
 }
