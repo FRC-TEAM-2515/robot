@@ -141,7 +141,8 @@ public class RobotContainer {
               //   SmartDashboard.putBoolean("Is Target Orient",cmdTargetOrient.isTargetOrient());
 
                 SmartDashboard.putData("Deploy Intake", new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition));
-
+                SmartDashboard.putNumber("Backup Distance", DriveConstants.kAutoDriveDistance);
+                SmartDashboard.putNumber("Current Mid Output", ShooterConstants.kMidOutput);
                 // SmartDashboard.putData("Is Robot Square", new cmdIsRobotSquare(m_hopperSubsystem));
                 // SmartDashboard.putBoolean("Is Robot Square?", HopperSubsystem.isRobotSquare());  
 
@@ -163,6 +164,8 @@ public class RobotContainer {
         public Command getAutonomousCommand() {
                 // The selected command will be run in autonomous
                 return m_chooser.getSelected();
+
+        
         }
 
         // public Trajectory getTrajectory() {
