@@ -83,7 +83,7 @@ public class DriveSubsystem extends SubsystemBase {
 
         m_gyro = new AHRS(Port.kMXP, (byte) 50);
         addChild("Gyro", m_gyro);
-
+ 
         m_encoderRightDrive = m_driveRightLeader.getEncoder();
         m_encoderRightDrive.setPositionConversionFactor(DriveConstants.kEncoderPositionConversionFactor);
         m_encoderRightDrive.setVelocityConversionFactor(DriveConstants.kEncoderVelocityConversionFactor);
@@ -236,8 +236,8 @@ public class DriveSubsystem extends SubsystemBase {
     }
 
     public void setSteeringAdjustment(){
-        double Kp = -0.15f;
-        double min_command = 0.05f;
+        double Kp = -0.1f;
+        double min_command = 0.025f;
         double tx = VisionSubsystem.getTx();
         double heading_error = -tx;
         double steering_adjust = 0.0f;

@@ -19,10 +19,10 @@ public class cmdHopperToggle extends InstantCommand {
     // Called once when this command runs
     @Override
     public void initialize() {
-        if (m_hopperSubsystem.isRunning() ||  Math.abs(VisionSubsystem.getTx()) < 1.0 ) {
+        if (m_hopperSubsystem.isRunning()  ) {
             m_hopperSubsystem.setOutput(0.0);
         } else {
-            RobotContainer.getInstance().m_driveSubsystem.setSteeringAdjustment();
+            //RobotContainer.getInstance().m_driveSubsystem.setSteeringAdjustment();
             m_hopperSubsystem.setOutput(1);
         }
     }
