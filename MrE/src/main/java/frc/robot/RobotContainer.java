@@ -82,21 +82,21 @@ public class RobotContainer {
                 // Smartdashboard Subsystems
 
                 // SmartDashboard Buttons
-                SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+                // SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
                 // SmartDashboard.putData("Auto Distance Drive", new
                 // autoDistanceDrive(m_driveSubsystem, DriveConstants.kAutoDriveDistance));
-                SmartDashboard.putData("cmdDriveToggleCurvatureMode",
-                                new cmdDriveToggleCurvatureMode(m_driveSubsystem));
+                // SmartDashboard.putData("cmdDriveToggleCurvatureMode",
+                                // new cmdDriveToggleCurvatureMode(m_driveSubsystem));
                 // SmartDashboard.putData("cmdDriveToggleRightStickMode", new
                 // cmdDriveToggleRightStickMode());
                 // SmartDashboard.putData("cmdShooterSetRPM: setpointMinRPM",
                 // new cmdShooterSetRPM(200, m_shooterSubsystem));
                 // SmartDashboard.putData("cmdShooterSetRPM: setpointMaxRPM",
                 // new cmdShooterSetRPM(500, m_shooterSubsystem));
-                SmartDashboard.putData("cmdIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
-                SmartDashboard.putData("cmdSafeReset", new cmdSafeReset());
-                SmartDashboard.putData("cmdHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
-                SmartDashboard.putNumber("Shooter output", ShooterConstants.kShooterPercentOutput);
+                // SmartDashboard.putData("cmdIntakeToggle", new cmdIntakeToggle(m_intakeSubsystem));
+                // SmartDashboard.putData("cmdSafeReset", new cmdSafeReset());
+                // SmartDashboard.putData("cmdHopperToggle", new cmdHopperToggle(m_hopperSubsystem));
+                // SmartDashboard.putNumber("Shooter output", ShooterConstants.kShooterPercentOutput);
 
                 // SmartDashboard.putData("cmdShoot", new cmdShoot(m_shooterSubsystem,
                 // m_hopperSubsystem));
@@ -136,8 +136,8 @@ public class RobotContainer {
                         m_trajectoryChooser.setDefaultOption("Default", m_trajectoryDefault);
                 }
 
-                SmartDashboard.putData("Auto Mode", m_chooser);
-                SmartDashboard.putData("Trajectory", m_trajectoryChooser);
+                 SmartDashboard.putData("Auto Mode", m_chooser);
+                // SmartDashboard.putData("Trajectory", m_trajectoryChooser);
         }
 
         public static RobotContainer getInstance() {
@@ -262,8 +262,8 @@ public class RobotContainer {
                 final JoystickButton btnDriveToggleRightStickMode = new JoystickButton(controllerPilot,
                                 XboxController.Button.kStart.value);
                 btnDriveToggleRightStickMode.whenPressed(new cmdDriveToggleRightStickMode(m_driveSubsystem), true);
-                SmartDashboard.putData("btnDriveToggleRightStickMode",
-                                new cmdDriveToggleRightStickMode(m_driveSubsystem));
+                // SmartDashboard.putData("btnDriveToggleRightStickMode",
+                //                 new cmdDriveToggleRightStickMode(m_driveSubsystem));
 
                 // final JoystickButton btnDriveToggleCurvatureMode = new JoystickButton(controllerPilot,
                 //               XboxController.Button.kBack.value);
@@ -275,7 +275,7 @@ public class RobotContainer {
                  final JoystickButton btnTargetOrient = new JoystickButton(controllerPilot,
                                   XboxController.Button.kBack.value);
                  btnTargetOrient.whenPressed(new cmdTargetOrient(m_driveSubsystem), true);
-                 SmartDashboard.putData("Target Orient", new cmdTargetOrient(m_driveSubsystem));
+                //  SmartDashboard.putData("Target Orient", new cmdTargetOrient(m_driveSubsystem));
               //   SmartDashboard.putBoolean("Is Target Orient",cmdTargetOrient.isTargetOrient());
 
                 SmartDashboard.putData("Deploy Intake", new cmdIntakeDeploy(m_intakeDeploySubsystem, IntakeConstants.kMaxEncoderPosition));

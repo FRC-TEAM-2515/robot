@@ -32,5 +32,10 @@
       "/SmartDashboard/cmdIntakeToggle": "Command",
       "/SmartDashboard/cmdSafeReset": "Command"
     }
+  },
+  "NetworkTables": {
+    "SmartDashboard": {
+      "open": true
+    }
   }
 }

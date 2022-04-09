@@ -186,8 +186,8 @@ public class ShooterSubsystem extends SubsystemBase {
     public void setVelocity(double setpoint) {
         setpoint = setpoint * ShooterConstants.kMaxRPM;
         m_pidController.setReference(setpoint, CANSparkMax.ControlType.kVelocity);
-        SmartDashboard.putNumber("SetPoint", setpoint);
-        SmartDashboard.putNumber("ProcessVariable", m_encoderShooter.getVelocity());
+        // SmartDashboard.putNumber("SetPoint", setpoint);
+        // SmartDashboard.putNumber("ProcessVariable", m_encoderShooter.getVelocity());
     }
 
     public void setOutput(double output) {
