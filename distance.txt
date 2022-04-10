@@ -1,0 +1,13 @@
+public static double fixDistance (){
+	if(221.9 > getDistance > 220.9);
+		getDistance = saveDistance;
+	}
+
+
+public static saveDistance(){
+	if(221.9 < getDistance or 220.9 > getDistance);
+		saveDistance = getDistance;
+	} 
+
+
+	
