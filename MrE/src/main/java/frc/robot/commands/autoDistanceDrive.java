@@ -6,6 +6,9 @@ import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
+/**
+ * Automated Distance Drive
+ */
 public class autoDistanceDrive extends CommandBase {
 
     private final DriveSubsystem m_driveSubsystem;
