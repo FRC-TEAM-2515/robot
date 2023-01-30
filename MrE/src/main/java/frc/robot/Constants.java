@@ -20,13 +20,76 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public class Constants {
-   /**
-    * public static final class DriveConstants {
-    *   public static final int kLeftMotor1Port = 0;
-    *   public static final int kLeftMotor2Port = 1;
-    *   public static final int kRightMotor1Port = 2;
-    *   public static final int kRightMotor2Port = 3; 
-    * }
-    */ 
+
+    public static final class DriveConstants {
+        public static final int kLeftLeaderPort = 1;
+        public static final int kLeftFollowerPort = 2;
+        public static final int kRightLeaderPort = 3;
+        public static final int kRightFollowerPort = 4; 
+        public static final double kTurnGain = 2.0;
+        public static final double kDeadband = .15;
+        public static final double kDriveGain = 2.0;
+    }
+
+    public static final class TurretConstants {
+        public static final double kTurnP = 1;
+        public static final double kTurnI = 0;
+        public static final double kTurnD = 0;
+
+        public static final double kMaxTurnRateDegPerS = 100;
+        public static final double kMaxTurnAccelerationDegPerSSquared = 300;
+
+        public static final double kTurnToleranceDeg = 5;
+        public static final double kTurnRateToleranceDegPerS = 10; // degrees per second
+    }
+
+    public static final class VerticalWristConstants {
+        public static final double kTurnP = 1;
+        public static final double kTurnI = 0;
+        public static final double kTurnD = 0;
+
+        public static final double kMaxTurnRateDegPerS = 100;
+        public static final double kMaxTurnAccelerationDegPerSSquared = 300;
+
+        public static final double kTurnToleranceDeg = 5;
+        public static final double kTurnRateToleranceDegPerS = 10; // degrees per second
+    }
+
+    public static final class HorizontalWristConstants {
+        public static final double kTurnP = 1;
+        public static final double kTurnI = 0;
+        public static final double kTurnD = 0;
+
+        public static final double kMaxTurnRateDegPerS = 100;
+        public static final double kMaxTurnAccelerationDegPerSSquared = 300;
+
+        public static final double kTurnToleranceDeg = 5;
+        public static final double kTurnRateToleranceDegPerS = 10; // degrees per second
+    }
+     
+    public static final class ArmConstants {
+        public static final double kTurnP = 1;
+        public static final double kTurnI = 0;
+        public static final double kTurnD = 0;
+
+        public static final double kMaxTurnRateDegPerS = 100;
+        public static final double kMaxTurnAccelerationDegPerSSquared = 300;
+
+        public static final double kTurnToleranceDeg = 5;
+        public static final double kTurnRateToleranceDegPerS = 10; // degrees per second
+    }
+
+    // Needs to be updated from rotation to open
+    public static final class ClawConstants {
+        public static final double kTurnP = 1;
+        public static final double kTurnI = 0;
+        public static final double kTurnD = 0;
+
+        public static final double kMaxTurnRateDegPerS = 100;
+        public static final double kMaxTurnAccelerationDegPerSSquared = 300;
+
+        public static final double kTurnToleranceDeg = 5;
+        public static final double kTurnRateToleranceDegPerS = 10; // degrees per second
+    }
 }
 
