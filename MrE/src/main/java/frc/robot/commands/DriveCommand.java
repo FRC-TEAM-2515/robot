@@ -68,10 +68,10 @@ public class DriveCommand extends CommandBase {
         double turn = m_driveController.getLeftX();
 
         //Filters the Speed and Turn values. Requires arcade drive.
-            // speed = speedFilter.get(speed);
-            // turn = turnFilter.get(turn);
+            speed = speedFilter.get(speed);
+            turn = turnFilter.get(turn);
 
-            // m_drivetrain.arcadeDrive(speed,turn);
+            m_drivetrain.arcadeDrive(speed,turn);
     }
     // Called once the command ends or is interrupted.
     @Override

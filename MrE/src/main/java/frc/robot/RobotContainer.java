@@ -66,7 +66,7 @@ public class RobotContainer {
   }      
 
   private void configureDefaultCommands() {
-
+    // DriveTrain.setDefaultCommand(new DriveCommand(m_driveTrain, driveController));
   }
 
     /**
@@ -87,6 +87,10 @@ public class RobotContainer {
     return m_robotContainer;
   }
     
+  public Gamepad getDriveController() {
+    return driveController;
+  }
+ 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *

@@ -12,10 +12,10 @@ import frc.robot.Robot;
 import frc.robot.Constants.*;
 import frc.robot.subsystems.*;
 
-/** A command that will open the Claw along the x axis */
+/** A command that will open the claw */
 public class ClawOpen extends PIDCommand {
 /**
- * opens the   to a specified angle along the y axis
+ * opens the claw to a specified distance/width
  * Absolutely going to need a motion path/ profiled PID command
  */
     public ClawOpen(double targetAngleDegrees, Claw ClawMotor ) {   
