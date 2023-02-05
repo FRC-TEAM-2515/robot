@@ -163,6 +163,7 @@ public class DriveTrain extends SubsystemBase {
     }
     Timer.delay(1.0);
     
+    odometry = new DifferentialDriveOdometry(gyro.getRotation2d(), m_driveGain, m_deadband);
 }
     
 
